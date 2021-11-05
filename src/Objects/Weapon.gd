@@ -7,7 +7,7 @@ onready var cooldown_timer := $Cooldown
 
 var can_attack := true
 
-func attack(direction = 1) -> void:
+func attack() -> void:
 	if can_attack:
 		can_attack = false
 		cooldown_timer.start()
