@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://src/Objects/Weapon.gd" type="Script" id=1]
+[ext_resource path="res://src/Weapons/Weapon.gd" type="Script" id=1]
 
 [node name="Weapon" type="Position2D"]
 script = ExtResource( 1 )

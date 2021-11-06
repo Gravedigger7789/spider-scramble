@@ -12,12 +12,12 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Projectile",
 "language": "GDScript",
-"path": "res://src/Objects/Projectile.gd"
+"path": "res://src/Weapons/Projectile.gd"
 }, {
 "base": "Position2D",
 "class": "Weapon",
 "language": "GDScript",
-"path": "res://src/Objects/Weapon.gd"
+"path": "res://src/Weapons/Weapon.gd"
 } ]
 _global_script_class_icons={
 "Projectile": "",

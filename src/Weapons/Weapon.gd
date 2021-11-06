@@ -1,7 +1,7 @@
 class_name Weapon
 extends Position2D
 
-const Projectile := preload("res://src/Objects/Projectile.tscn")
+const Projectile := preload("res://src/Weapons/Projectile.tscn")
 
 onready var cooldown_timer := $Cooldown
 
