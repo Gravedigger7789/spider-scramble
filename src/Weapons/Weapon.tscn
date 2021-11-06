@@ -12,5 +12,3 @@ __meta__ = {
 process_mode = 0
 wait_time = 0.3
 one_shot = true
-
-[connection signal="timeout" from="Cooldown" to="." method="_on_Cooldown_timeout"]
