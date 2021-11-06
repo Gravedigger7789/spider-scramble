@@ -5,7 +5,7 @@ const TERMINAL_VELOCITY := 500
 
 var velocity := Vector2()
 
-onready var gravity : int = ProjectSettings.get_setting("physics/2d/default_gravity")
+onready var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 onready var weapon := $Weapon
 
 func _physics_process(delta: float) -> void:
