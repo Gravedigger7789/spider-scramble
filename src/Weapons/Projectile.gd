@@ -1,5 +1,5 @@
-class_name Projectile
 extends Area2D
+class_name Projectile
 
 const SPEED := 500.0
 const ENEMY_LAYER := 2

@@ -1,9 +1,9 @@
-class_name Weapon
 extends Position2D
+class_name Weapon
 
 const Projectile := preload("res://src/Weapons/Projectile.tscn")
 
-onready var cooldown_timer := $Cooldown
+onready var cooldown_timer: Timer = $Cooldown
 
 func attack() -> void:
 	if cooldown_timer.is_stopped():

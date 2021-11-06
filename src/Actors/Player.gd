@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name Player
 
 const JUMP_SPEED := 380
 const TERMINAL_VELOCITY := 500
@@ -6,7 +7,7 @@ const TERMINAL_VELOCITY := 500
 var velocity := Vector2()
 
 onready var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
-onready var weapon := $Weapon
+onready var weapon: Weapon = $Weapon
 
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
