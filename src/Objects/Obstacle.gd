@@ -11,7 +11,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_Obstacle_body_entered(body: Node) -> void:
 	if body is Player:
-		body.queue_free()
+		body.take_damage()
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()

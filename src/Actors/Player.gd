@@ -22,3 +22,6 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("attack"):
 		weapon.attack()
+
+func take_damage() -> void:
+	queue_free()
