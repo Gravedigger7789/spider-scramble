@@ -1,10 +1,11 @@
 extends KinematicBody2D
 class_name Player
 
-const JUMP_SPEED := 380
-const TERMINAL_VELOCITY := 500
+const JUMP_SPEED := 400.0
+const TERMINAL_VELOCITY := 500.0
 
 var velocity := Vector2()
+
 
 onready var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 onready var weapon: Weapon = $Weapon
