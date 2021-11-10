@@ -1,8 +1,8 @@
 extends KinematicBody2D
 class_name Player
 
-const JUMP_SPEED := 450.0
-const TERMINAL_VELOCITY := 500.0
+const JUMP_SPEED := 550.0
+const TERMINAL_VELOCITY := 550.0
 
 var velocity := Vector2()
 
