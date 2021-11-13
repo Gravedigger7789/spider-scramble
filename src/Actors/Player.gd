@@ -13,6 +13,7 @@ onready var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravi
 onready var weapon: Weapon = $Weapon
 onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
 	velocity.y = min(TERMINAL_VELOCITY, velocity.y)
