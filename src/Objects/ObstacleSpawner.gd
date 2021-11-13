@@ -1,8 +1,8 @@
 extends Position2D
 
 export(Array, PackedScene) var obstacles: Array
-export var min_spawn_time := 2.0
-export var max_spawn_time := 4.0
+export (float, 0, 30) var min_spawn_time := 2.0
+export (float, 0, 30) var max_spawn_time := 4.0
 onready var spawn_timer: Timer = $SpawnTimer
 onready var floor_raycast: RayCast2D = $FloorCheck
 
