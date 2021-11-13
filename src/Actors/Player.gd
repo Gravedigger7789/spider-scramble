@@ -11,6 +11,7 @@ var coins := 0
 onready var health := MAX_HEALTH
 onready var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 onready var weapon: Weapon = $Weapon
+onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
@@ -26,6 +27,8 @@ func _physics_process(delta: float) -> void:
 		weapon.attack()
 
 func take_damage() -> void:
+	animation_player.play("damage")
+	animation_player.queue("RESET")
 	heal(-1)
 
 func collect_coin(count: int) -> void:
@@ -33,7 +36,7 @@ func collect_coin(count: int) -> void:
 	print(coins)
 
 func heal(count: int) -> void:
-	health = min(health + count, MAX_HEALTH)
+	health = clamp(health + count, 0, MAX_HEALTH)
 	print(health)
 	if health <= 0:
 		queue_free()
