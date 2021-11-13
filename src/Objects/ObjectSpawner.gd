@@ -1,6 +1,6 @@
 extends Position2D
 
-export(Array, PackedScene) var obstacles: Array
+export(Array, PackedScene) var objects: Array
 onready var spawn_timer: Timer = $SpawnTimer
 onready var floor_raycast: RayCast2D = $FloorCheck
 
@@ -14,8 +14,8 @@ func randomize_spawn_time() -> void:
 	spawn_timer.start(random_spawn_time)
 
 func spawn_random_obstacle() -> void:
-	var random_index = randi() % obstacles.size()
-	var obstacle: Obstacle = obstacles[random_index].instance()
+	var random_index = randi() % objects.size()
+	var obstacle: Obstacle = objects[random_index].instance()
 	get_parent().add_child(obstacle)
 	var floor_position = floor_raycast.get_collision_point() - (obstacle.size / 2) \
 		if floor_raycast.is_colliding() else global_position
