@@ -4,6 +4,7 @@ class_name Projectile
 const SPEED := 500.0
 const ENEMY_LAYER := 2
 
+
 func _physics_process(delta: float) -> void:
 	position.x += SPEED * delta
 

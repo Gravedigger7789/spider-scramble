@@ -5,6 +5,7 @@ const Projectile := preload("res://src/Weapons/Projectile.tscn")
 
 onready var cooldown_timer: Timer = $Cooldown
 
+
 func attack() -> void:
 	if cooldown_timer.is_stopped():
 		cooldown_timer.start()
