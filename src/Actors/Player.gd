@@ -3,10 +3,12 @@ class_name Player
 
 const JUMP_SPEED := 550.0
 const TERMINAL_VELOCITY := 550.0
+const MAX_HEALTH := 3
 
 var velocity := Vector2()
+var coins := 0
 
-
+onready var health := MAX_HEALTH
 onready var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 onready var weapon: Weapon = $Weapon
 
@@ -24,4 +26,14 @@ func _physics_process(delta: float) -> void:
 		weapon.attack()
 
 func take_damage() -> void:
-	queue_free()
+	heal(-1)
+
+func collect_coin(count: int) -> void:
+	coins += count
+	print(coins)
+
+func heal(count: int) -> void:
+	health = min(health + count, MAX_HEALTH)
+	print(health)
+	if health <= 0:
+		queue_free()
