@@ -10,5 +10,5 @@ __meta__ = {
 
 [node name="Cooldown" type="Timer" parent="."]
 process_mode = 0
-wait_time = 0.3
+wait_time = 0.5
 one_shot = true
