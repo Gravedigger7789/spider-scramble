@@ -24,7 +24,7 @@
 [ext_resource path="res://assets/forest/foliage-4.png" type="Texture" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 640, 64 )
+extents = Vector2( 640, 68 )
 
 [node name="TreeBackground" type="Node"]
 
@@ -112,5 +112,5 @@ collision_layer = 4
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 640, 408 )
+position = Vector2( 640, 412 )
 shape = SubResource( 1 )
