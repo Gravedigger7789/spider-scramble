@@ -11,7 +11,7 @@ var coins := 0
 onready var health := MAX_HEALTH
 onready var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 onready var weapon: Weapon = $Weapon
-onready var animation_player: AnimationPlayer = $AnimationPlayer
+onready var animation_player: AnimationNodeStateMachinePlayback = $AnimationTree.get("parameters/playback")
 
 
 func _physics_process(delta: float) -> void:
@@ -25,11 +25,11 @@ func _physics_process(delta: float) -> void:
 		velocity.y *= 0.6;
 	
 	if Input.is_action_just_pressed("attack"):
+		animation_player.travel("walk_attack")
 		weapon.attack()
 
 func take_damage() -> void:
-	animation_player.play("damage")
-	animation_player.queue("RESET")
+	animation_player.travel("damage")
 	heal(-1)
 
 func collect_coin(count: int) -> void:
