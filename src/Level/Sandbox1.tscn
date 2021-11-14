@@ -32,4 +32,4 @@ __meta__ = {
 }
 
 [node name="ObstacleSpawner" parent="." instance=ExtResource( 3 )]
-position = Vector2( 608, 256 )
+position = Vector2( 768, 256 )
