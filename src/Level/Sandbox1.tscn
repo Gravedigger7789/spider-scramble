@@ -10,7 +10,7 @@ extents = Vector2( 32, 32 )
 
 [node name="Sandbox1" type="Node2D"]
 
-[node name="ScrollingParallaxBackground" parent="." instance=ExtResource( 4 )]
+[node name="TreeBackground" parent="." instance=ExtResource( 4 )]
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( 96, 96 )
