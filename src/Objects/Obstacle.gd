@@ -10,10 +10,12 @@ onready var size := Vector2(sprite.texture.get_width(), sprite.texture.get_heigh
 func _physics_process(delta: float) -> void:
 	position.x -= SPEED * delta
 
+
 func _on_Obstacle_body_entered(body: Node) -> void:
 	if body is Player:
 		queue_free()
 		body.take_damage()
+
 
 func _on_VisibilityNotifier2D_screen_exited() -> void:
 	queue_free()
