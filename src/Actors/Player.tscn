@@ -37,6 +37,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ ExtResource( 1 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:can_attack")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "damage"
@@ -52,6 +64,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:can_attack")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 0, 0 ),
+"update": 1,
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -97,14 +121,14 @@ animation = "damage"
 animation = "walk"
 
 [sub_resource type="AnimationNodeBlendTree" id=14]
-graph_offset = Vector2( -230, 31 )
+graph_offset = Vector2( -241, 45 )
 nodes/Add2/node = SubResource( 23 )
 nodes/Add2/position = Vector2( 100, 120 )
 nodes/Animation/node = SubResource( 13 )
 nodes/Animation/position = Vector2( -80, 100 )
 "nodes/Animation 2/node" = SubResource( 12 )
 "nodes/Animation 2/position" = Vector2( -100, 220 )
-node_connections = [ "output", 0, "Add2", "Add2", 0, "Animation", "Add2", 1, "Animation 2" ]
+node_connections = [ "output", 0, "Add2", "Add2", 0, "Animation 2", "Add2", 1, "Animation" ]
 
 [sub_resource type="AnimationNodeAnimation" id=6]
 animation = "walk"

@@ -8,6 +8,8 @@ const MAX_HEALTH := 3
 var velocity := Vector2()
 var coins := 0
 
+export var can_attack := true
+
 onready var health := MAX_HEALTH
 onready var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 onready var weapon: Weapon = $Weapon
@@ -24,7 +26,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y *= 0.6;
 	
-	if Input.is_action_just_pressed("attack"):
+	if can_attack && Input.is_action_just_pressed("attack"):
 		animation_player.travel("walk_attack")
 		weapon.attack()
 
