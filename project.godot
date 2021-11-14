@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Sprite",
+"class": "MovingSprite",
+"language": "GDScript",
+"path": "res://src/Level/MovingSprite.gd"
+}, {
 "base": "Area2D",
 "class": "Obstacle",
 "language": "GDScript",
@@ -25,14 +30,21 @@ _global_script_classes=[ {
 "path": "res://src/Weapons/Projectile.gd"
 }, {
 "base": "Position2D",
+"class": "SpriteSpawner",
+"language": "GDScript",
+"path": "res://src/Level/SpriteSpawner.gd"
+}, {
+"base": "Position2D",
 "class": "Weapon",
 "language": "GDScript",
 "path": "res://src/Weapons/Weapon.gd"
 } ]
 _global_script_class_icons={
+"MovingSprite": "",
 "Obstacle": "",
 "Player": "",
 "Projectile": "",
+"SpriteSpawner": "",
 "Weapon": ""
 }
 
@@ -44,6 +56,8 @@ config/icon="res://icon.png"
 
 [display]
 
+window/size/width=640
+window/size/height=480
 window/dpi/allow_hidpi=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
@@ -82,3 +96,4 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 environment/default_environment="res://default_env.tres"
+quality/dynamic_fonts/use_oversampling=false

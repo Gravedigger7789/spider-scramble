@@ -1,0 +1,116 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://src/Level/TreeBackground.gd" type="Script" id=1]
+[ext_resource path="res://assets/forest/treetop.png" type="Texture" id=2]
+[ext_resource path="res://assets/forest/floor-3.png" type="Texture" id=3]
+[ext_resource path="res://assets/forest/floor-2.png" type="Texture" id=4]
+[ext_resource path="res://assets/forest/forestback-2.png" type="Texture" id=5]
+[ext_resource path="res://assets/forest/forestback-3.png" type="Texture" id=6]
+[ext_resource path="res://assets/forest/floor-1.png" type="Texture" id=7]
+[ext_resource path="res://assets/forest/forestback-1.png" type="Texture" id=8]
+[ext_resource path="res://src/Level/SpriteSpawner.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/forest/litebush-5.png" type="Texture" id=10]
+[ext_resource path="res://assets/forest/litebush-4.png" type="Texture" id=11]
+[ext_resource path="res://assets/forest/litebush-2.png" type="Texture" id=12]
+[ext_resource path="res://assets/forest/darkbush-2.png" type="Texture" id=13]
+[ext_resource path="res://assets/forest/darkbush-4.png" type="Texture" id=14]
+[ext_resource path="res://assets/forest/litebush-1.png" type="Texture" id=15]
+[ext_resource path="res://assets/forest/darkbush-3.png" type="Texture" id=16]
+[ext_resource path="res://assets/forest/litebush-3.png" type="Texture" id=17]
+[ext_resource path="res://assets/forest/darkbush-1.png" type="Texture" id=18]
+[ext_resource path="res://assets/forest/foliage-2.png" type="Texture" id=19]
+[ext_resource path="res://assets/forest/foliage-1.png" type="Texture" id=20]
+[ext_resource path="res://assets/forest/foliage-3.png" type="Texture" id=21]
+[ext_resource path="res://assets/forest/foliage-4.png" type="Texture" id=22]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 640, 92 )
+
+[node name="TreeBackground" type="Node"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_limit_end = Vector2( 0, 480 )
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="ParallaxBackground"]
+texture = ExtResource( 8 )
+centered = false
+
+[node name="FarTrees" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 0.1 )
+motion_mirroring = Vector2( 640, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/FarTrees"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="MidTrees" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.25, 0.25 )
+motion_mirroring = Vector2( 640, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/MidTrees"]
+texture = ExtResource( 6 )
+centered = false
+
+[node name="TreeSpawner" parent="ParallaxBackground" instance=ExtResource( 9 )]
+position = Vector2( 832, 256 )
+
+[node name="TreeTops" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 640, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/TreeTops"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="FoliageSpawner" parent="ParallaxBackground" instance=ExtResource( 9 )]
+position = Vector2( 832, 24 )
+textures = [ ExtResource( 20 ), ExtResource( 19 ), ExtResource( 21 ), ExtResource( 22 ) ]
+min_spawn_time = 0.5
+max_spawn_time = 2.0
+
+[node name="ShrubSpawner" parent="ParallaxBackground" instance=ExtResource( 9 )]
+position = Vector2( 800, 256 )
+textures = [ ExtResource( 18 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 12 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 10 ) ]
+min_spawn_time = 1.0
+max_spawn_time = 2.0
+
+[node name="Ground" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 640, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Ground"]
+margin_top = 288.0
+margin_right = 640.0
+margin_bottom = 352.0
+texture = ExtResource( 7 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="ParallaxBackground/Ground"]
+margin_top = 352.0
+margin_right = 640.0
+margin_bottom = 416.0
+texture = ExtResource( 4 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="ParallaxBackground/Ground"]
+margin_top = 416.0
+margin_right = 640.0
+margin_bottom = 480.0
+texture = ExtResource( 3 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 640, 388 )
+shape = SubResource( 1 )
