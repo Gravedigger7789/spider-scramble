@@ -1,0 +1,16 @@
+extends Sprite
+class_name MovingSprite
+
+
+export var velocity: Vector2 = Vector2( -400, 0 );
+
+onready var size := Vector2(texture.get_width(), texture.get_height())
+
+func _ready():
+	var visibility_notifier := VisibilityNotifier2D.new()
+	visibility_notifier.rect = get_rect()
+	visibility_notifier.connect("screen_exited", self, "queue_free")
+	add_child(visibility_notifier)
+
+func _physics_process(delta: float) -> void:
+	position += velocity * delta
