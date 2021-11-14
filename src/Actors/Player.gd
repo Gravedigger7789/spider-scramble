@@ -44,7 +44,7 @@ func collect_coin(count: int) -> void:
 
 
 func heal(count: int) -> void:
-	health = clamp(health + count, 0, MAX_HEALTH)
+	health = int(clamp(health + count, 0, MAX_HEALTH))
 	print(health)
 	if health <= 0:
 		queue_free()
