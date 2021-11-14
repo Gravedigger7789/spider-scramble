@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/coin_left.png-c05b42ae1e76acc4419858855f81a01c.stex"
+path="res://.import/rock.png-3dab30f8162fc7b44e49ff5a361c573b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/coin_left.png"
-dest_files=[ "res://.import/coin_left.png-c05b42ae1e76acc4419858855f81a01c.stex" ]
+source_file="res://assets/enemy/rock.png"
+dest_files=[ "res://.import/rock.png-3dab30f8162fc7b44e49ff5a361c573b.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/treetop.png-26d118a9ace00f5560a34972d84af308.stex"
+path="res://.import/forestback-2.png-58819820f8a7c8c586285c5c26a41476.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/treetop.png"
-dest_files=[ "res://.import/treetop.png-26d118a9ace00f5560a34972d84af308.stex" ]
+source_file="res://assets/forest/forestback-2.png"
+dest_files=[ "res://.import/forestback-2.png-58819820f8a7c8c586285c5c26a41476.stex" ]
 
 [params]
 

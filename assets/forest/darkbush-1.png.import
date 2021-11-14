@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/darkbush-1.png-36c70c8baef694a88d191e873dd55ea7.stex"
+path="res://.import/darkbush-1.png-372814eab846f780f204edbb21dffdbc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/darkbush-1.png"
-dest_files=[ "res://.import/darkbush-1.png-36c70c8baef694a88d191e873dd55ea7.stex" ]
+source_file="res://assets/forest/darkbush-1.png"
+dest_files=[ "res://.import/darkbush-1.png-372814eab846f780f204edbb21dffdbc.stex" ]
 
 [params]
 

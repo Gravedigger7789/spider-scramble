@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/litebush-5.png-fc6def865ceaeb6c3212cce084443527.stex"
+path="res://.import/coin_right.png-2de91f6eb30420035a8a607dca7a98ba.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/litebush-5.png"
-dest_files=[ "res://.import/litebush-5.png-fc6def865ceaeb6c3212cce084443527.stex" ]
+source_file="res://assets/collect/coin_right.png"
+dest_files=[ "res://.import/coin_right.png-2de91f6eb30420035a8a607dca7a98ba.stex" ]
 
 [params]
 

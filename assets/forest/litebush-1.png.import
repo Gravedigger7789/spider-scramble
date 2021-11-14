@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/litebush-3.png-9217ae6463e7b52a567ac1aa47aa5d49.stex"
+path="res://.import/litebush-1.png-b58a31aa449a04fb2b886d87997f8734.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/litebush-3.png"
-dest_files=[ "res://.import/litebush-3.png-9217ae6463e7b52a567ac1aa47aa5d49.stex" ]
+source_file="res://assets/forest/litebush-1.png"
+dest_files=[ "res://.import/litebush-1.png-b58a31aa449a04fb2b886d87997f8734.stex" ]
 
 [params]
 
