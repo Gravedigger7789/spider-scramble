@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spider-o1.png-a60dca884f2b7dafe613883dbef823a0.stex"
+path="res://.import/spider_idle_mouth_closed.png-e6ec0a0e715defa570746d4c46b08fea.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/spider-o1.png"
-dest_files=[ "res://.import/spider-o1.png-a60dca884f2b7dafe613883dbef823a0.stex" ]
+source_file="res://assets/player/spider_idle_mouth_closed.png"
+dest_files=[ "res://.import/spider_idle_mouth_closed.png-e6ec0a0e715defa570746d4c46b08fea.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spider-io.png-d013dd20ce2836e4c5b79151dabe2d22.stex"
+path="res://.import/spider_walk_2_mouth_open.png-9cf5dd56424060081b266ec52276bd79.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/spider-io.png"
-dest_files=[ "res://.import/spider-io.png-d013dd20ce2836e4c5b79151dabe2d22.stex" ]
+source_file="res://assets/player/spider_walk_2_mouth_open.png"
+dest_files=[ "res://.import/spider_walk_2_mouth_open.png-9cf5dd56424060081b266ec52276bd79.stex" ]
 
 [params]
 
