@@ -24,7 +24,7 @@
 [ext_resource path="res://assets/forest/foliage-4.png" type="Texture" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 640, 92 )
+extents = Vector2( 640, 64 )
 
 [node name="TreeBackground" type="Node"]
 
@@ -53,7 +53,7 @@ texture = ExtResource( 6 )
 centered = false
 
 [node name="TreeSpawner" parent="ParallaxBackground" instance=ExtResource( 9 )]
-position = Vector2( 832, 256 )
+position = Vector2( 832, 320 )
 
 [node name="TreeTops" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2( 640, 0 )
@@ -69,7 +69,7 @@ min_spawn_time = 0.5
 max_spawn_time = 2.0
 
 [node name="ShrubSpawner" parent="ParallaxBackground" instance=ExtResource( 9 )]
-position = Vector2( 800, 256 )
+position = Vector2( 800, 320 )
 textures = [ ExtResource( 18 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 12 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 10 ) ]
 min_spawn_time = 1.0
 max_spawn_time = 2.0
@@ -78,9 +78,9 @@ max_spawn_time = 2.0
 motion_mirroring = Vector2( 640, 0 )
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Ground"]
-margin_top = 288.0
+margin_top = 336.0
 margin_right = 640.0
-margin_bottom = 352.0
+margin_bottom = 400.0
 texture = ExtResource( 7 )
 stretch_mode = 2
 __meta__ = {
@@ -88,9 +88,9 @@ __meta__ = {
 }
 
 [node name="TextureRect2" type="TextureRect" parent="ParallaxBackground/Ground"]
-margin_top = 352.0
+margin_top = 400.0
 margin_right = 640.0
-margin_bottom = 416.0
+margin_bottom = 464.0
 texture = ExtResource( 4 )
 stretch_mode = 2
 __meta__ = {
@@ -98,9 +98,9 @@ __meta__ = {
 }
 
 [node name="TextureRect3" type="TextureRect" parent="ParallaxBackground/Ground"]
-margin_top = 416.0
+margin_top = 464.0
 margin_right = 640.0
-margin_bottom = 480.0
+margin_bottom = 528.0
 texture = ExtResource( 3 )
 stretch_mode = 2
 __meta__ = {
@@ -112,5 +112,5 @@ collision_layer = 4
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 640, 388 )
+position = Vector2( 640, 408 )
 shape = SubResource( 1 )
