@@ -13,30 +13,35 @@ export var can_attack := true
 onready var health := MAX_HEALTH
 onready var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 onready var weapon: Weapon = $Weapon
-onready var animation_player: AnimationNodeStateMachinePlayback = $AnimationTree.get("parameters/playback")
+onready var animation_player: AnimationNodeStateMachinePlayback = $AnimationTree.get(
+	"parameters/playback"
+)
 
 
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
 	velocity.y = min(TERMINAL_VELOCITY, velocity.y)
 	velocity = move_and_slide(velocity, Vector2.UP)
-	
+
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = -JUMP_SPEED
 	if Input.is_action_just_released("jump") and velocity.y < 0:
-		velocity.y *= 0.6;
-	
+		velocity.y *= 0.6
+
 	if can_attack && Input.is_action_just_pressed("attack"):
 		animation_player.travel("walk_attack")
 		weapon.attack()
+
 
 func take_damage() -> void:
 	animation_player.travel("damage")
 	heal(-1)
 
+
 func collect_coin(count: int) -> void:
 	coins += count
 	print(coins)
+
 
 func heal(count: int) -> void:
 	health = clamp(health + count, 0, MAX_HEALTH)
