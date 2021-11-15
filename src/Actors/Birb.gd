@@ -13,6 +13,7 @@ onready var jump_timer: Timer = $JumpTimer
 onready var sprite: Sprite = $Sprite
 onready var size := Vector2(sprite.texture.get_width(), sprite.texture.get_height())
 
+
 func _ready() -> void:
 	randomize()
 	randomize_jump_time()
