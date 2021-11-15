@@ -19,7 +19,7 @@ func randomize_spawn_time() -> void:
 
 func spawn_random_obstacle() -> void:
 	var random_index = randi() % obstacles.size()
-	var obstacle: Obstacle = obstacles[random_index].instance()
+	var obstacle = obstacles[random_index].instance()
 	get_parent().add_child(obstacle)
 	var floor_position = (
 		floor_raycast.get_collision_point() - (obstacle.size / 2)
