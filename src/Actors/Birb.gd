@@ -5,8 +5,8 @@ const TERMINAL_VELOCITY := 550.0
 const MAX_HEALTH := 3
 
 export var velocity := Vector2(-400, 0)
-export(float, 0, 30) var min_jump_time := 0.5
-export(float, 0, 30) var max_jump_time := 1.5
+export(float, 0, 30) var min_jump_time := 0.25
+export(float, 0, 30) var max_jump_time := 0.5
 
 onready var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 onready var jump_timer: Timer = $JumpTimer
