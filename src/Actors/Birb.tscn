@@ -74,6 +74,7 @@ shape = SubResource( 1 )
 rect = Rect2( -32, -32, 64, 64 )
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0, 6 )
