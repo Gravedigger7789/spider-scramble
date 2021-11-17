@@ -1,21 +1,44 @@
 extends KinematicBody2D
 class_name Player
 
+signal max_health_changed(health)
+signal health_changed(health)
+signal health_depleted()
+
 const JUMP_SPEED := 550.0
 const TERMINAL_VELOCITY := 550.0
-const MAX_HEALTH := 3
 
+var max_health : int setget set_max_health
+var health : int setget set_health
 var velocity := Vector2()
 var coins := 0
 
 export var can_attack := true
 
-onready var health := MAX_HEALTH
 onready var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 onready var weapon: Weapon = $Weapon
 onready var animation_player: AnimationNodeStateMachinePlayback = $AnimationTree.get(
 	"parameters/playback"
 )
+
+
+func _ready() -> void:
+	self.max_health = 3
+
+
+func set_max_health(value: int) -> void:
+	max_health = max(1, value)
+	emit_signal("max_health_changed", max_health)
+	self.health = max_health
+
+
+func set_health(value: int) -> void:
+	if health != value:
+		health = value
+		emit_signal("health_changed", value)
+	if health <= 0:
+		queue_free()
+		emit_signal("health_depleted")
 
 
 func _physics_process(delta: float) -> void:
@@ -39,13 +62,10 @@ func take_damage() -> void:
 	heal(-1)
 
 
-func collect_coin(count: int) -> void:
-	coins += count
+func collect_coin(value: int) -> void:
+	coins += value
 	print(coins)
 
 
-func heal(count: int) -> void:
-	health = int(clamp(health + count, 0, MAX_HEALTH))
-	print(health)
-	if health <= 0:
-		queue_free()
+func heal(value: int) -> void:
+	self.health = int(clamp(health + value, 0, max_health))
