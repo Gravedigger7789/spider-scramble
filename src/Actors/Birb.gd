@@ -11,6 +11,7 @@ export(float, 0, 30) var max_jump_time := 1.5
 onready var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 onready var jump_timer: Timer = $JumpTimer
 onready var sprite: Sprite = $Sprite
+onready var animation_player: AnimationPlayer = $AnimationPlayer
 onready var size := Vector2(sprite.texture.get_width(), sprite.texture.get_height())
 
 
@@ -26,6 +27,7 @@ func randomize_jump_time() -> void:
 
 func jump() -> void:
 	if is_on_floor():
+		animation_player.play("jump")
 		velocity.y = -JUMP_SPEED
 
 
@@ -33,6 +35,10 @@ func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
 	velocity.y = min(TERMINAL_VELOCITY, velocity.y)
 	velocity = move_and_slide(velocity, Vector2.UP)
+	if velocity.y > 0:
+		animation_player.play("fall")
+	if is_on_floor():
+		animation_player.play("RESET")
 
 
 func _on_JumpTimer_timeout() -> void:
