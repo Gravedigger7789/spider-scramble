@@ -29,8 +29,9 @@ func _physics_process(delta: float) -> void:
 		velocity.y *= 0.6
 
 	if can_attack && Input.is_action_just_pressed("attack"):
-		animation_player.travel("walk_attack")
-		weapon.attack()
+		var has_attacked = weapon.attack()
+		if has_attacked:
+			animation_player.travel("walk_attack")
 
 
 func take_damage() -> void:
