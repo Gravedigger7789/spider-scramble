@@ -3,13 +3,13 @@ class_name Player
 
 signal max_health_changed(health)
 signal health_changed(health)
-signal health_depleted()
+signal health_depleted
 
 const JUMP_SPEED := 550.0
 const TERMINAL_VELOCITY := 550.0
 
-var max_health : int setget set_max_health
-var health : int setget set_health
+var max_health: int setget set_max_health
+var health: int setget set_health
 var velocity := Vector2()
 var coins := 0
 
