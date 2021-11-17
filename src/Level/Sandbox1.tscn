@@ -13,7 +13,7 @@
 [node name="TreeBackground" parent="." instance=ExtResource( 4 )]
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 96, 96 )
+position = Vector2( 112, 96 )
 
 [node name="ObstacleSpawner" parent="." instance=ExtResource( 3 )]
 position = Vector2( 768, 320 )

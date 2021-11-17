@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://src/Level/TreeBackground.gd" type="Script" id=1]
 [ext_resource path="res://assets/forest/treetop.png" type="Texture" id=2]
@@ -25,6 +25,9 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 640, 68 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 240 )
 
 [node name="TreeBackground" type="Node"]
 
@@ -107,10 +110,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Floor" type="StaticBody2D" parent="."]
 collision_layer = 4
 collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2( 640, 412 )
 shape = SubResource( 1 )
+
+[node name="Wall" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2( 32, 240 )
+shape = SubResource( 2 )

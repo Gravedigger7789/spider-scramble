@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/enemy/bird_wings_neutral.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 28, 25 )
+extents = Vector2( 24, 22 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 30, 26 )
