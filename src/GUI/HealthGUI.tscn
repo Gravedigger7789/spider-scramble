@@ -4,8 +4,6 @@
 [ext_resource path="res://src/GUI/HealthGUI.gd" type="Script" id=2]
 
 [node name="HealthGUI" type="HBoxContainer"]
-margin_left = 64.0
-margin_top = 400.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false

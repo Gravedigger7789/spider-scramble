@@ -4,16 +4,20 @@ class_name Player
 signal max_health_changed(health)
 signal health_changed(health)
 signal health_depleted
+signal max_ammo_changed(ammo)
+signal ammo_changed(ammo)
 
 const JUMP_SPEED := 550.0
 const TERMINAL_VELOCITY := 550.0
 
 var max_health: int setget set_max_health
 var health: int setget set_health
+var max_ammo: int setget set_max_ammo
+var ammo: int setget set_ammo
 var velocity := Vector2()
 var coins := 0
 
-export var can_attack := true
+export var can_attack := true setget ,get_can_attack
 
 onready var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 onready var weapon: Weapon = $Weapon
@@ -24,6 +28,7 @@ onready var animation_player: AnimationNodeStateMachinePlayback = $AnimationTree
 
 func _ready() -> void:
 	self.max_health = 3
+	self.max_ammo = 5
 
 
 func set_max_health(value: int) -> void:
@@ -41,6 +46,22 @@ func set_health(value: int) -> void:
 		emit_signal("health_depleted")
 
 
+func set_max_ammo(value: int) -> void:
+	max_ammo = max(1, value)
+	emit_signal("max_ammo_changed", max_ammo)
+	self.ammo = max_ammo
+
+
+func set_ammo(value: int) -> void:
+	if ammo != value:
+		ammo = value
+		emit_signal("ammo_changed", ammo)
+
+
+func get_can_attack() -> bool:
+	return can_attack and ammo > 0
+
+
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
 	velocity.y = min(TERMINAL_VELOCITY, velocity.y)
@@ -51,10 +72,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y *= 0.6
 
-	if can_attack && Input.is_action_just_pressed("attack"):
+	if self.can_attack && Input.is_action_just_pressed("attack"):
 		var has_attacked = weapon.attack()
 		if has_attacked:
 			animation_player.travel("walk_attack")
+			self.ammo = max(ammo - 1, 0)
 
 
 func take_damage() -> void:
@@ -68,4 +90,9 @@ func collect_coin(value: int) -> void:
 
 
 func heal(value: int) -> void:
-	self.health = int(clamp(health + value, 0, max_health))
+	if value < 0:
+		self.health = int(clamp(health + value, 0, max_health))
+	elif health < max_health:
+		self.health = int(clamp(health + value, 0, max_health))
+	else: 
+		self.ammo = int(clamp(ammo + value, 0, max_ammo))
