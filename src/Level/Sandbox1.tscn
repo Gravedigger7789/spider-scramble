@@ -8,6 +8,7 @@
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Objects/Obstacle.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Objects/Heart.tscn" type="PackedScene" id=8]
+[ext_resource path="res://sounds/theme/loop.wav" type="AudioStream" id=9]
 
 [node name="Sandbox1" type="Node"]
 
@@ -26,3 +27,9 @@ obstacles = [ ExtResource( 7 ), ExtResource( 5 ) ]
 [node name="PickupSpawner" parent="." instance=ExtResource( 3 )]
 position = Vector2( 768, 224 )
 obstacles = [ ExtResource( 6 ), ExtResource( 8 ) ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
+mix_target = 1
+bus = "Level"

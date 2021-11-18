@@ -25,6 +25,7 @@ onready var weapon: Weapon = $Weapon
 onready var animation_player: AnimationNodeStateMachinePlayback = $AnimationTree.get(
 	"parameters/playback"
 )
+onready var jump_sound: AudioStreamPlayer2D = $JumpSound
 
 
 func _ready() -> void:
@@ -76,6 +77,7 @@ func _physics_process(delta: float) -> void:
 
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = -JUMP_SPEED
+		jump_sound.play()
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y *= 0.6
 

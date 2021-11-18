@@ -2,7 +2,8 @@ extends Area2D
 class_name Projectile
 
 const SPEED := 500.0
-const ENEMY_LAYER := 2
+
+onready var hit_sound: AudioStreamPlayer2D = $HitSound
 
 
 func _physics_process(delta: float) -> void:
@@ -10,9 +11,12 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_Projectile_body_entered(body: Node) -> void:
-	if body.collision_layer == ENEMY_LAYER:
-		body.queue_free()
-	queue_free()
+	set_deferred("monitorable", false)
+	set_deferred("monitoring", false)
+	visible = false
+	hit_sound.connect("finished", self, "queue_free")
+	hit_sound.play()
+	body.queue_free()
 
 
 func _on_Expiration_timeout():
