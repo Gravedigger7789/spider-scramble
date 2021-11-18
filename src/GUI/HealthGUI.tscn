@@ -9,7 +9,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlaceHolder" type="TextureRect" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 24.0
+margin_bottom = 24.0
+
+[node name="PlaceHolder" type="TextureRect" parent="CenterContainer"]
 margin_right = 24.0
 margin_bottom = 24.0
 texture = ExtResource( 1 )

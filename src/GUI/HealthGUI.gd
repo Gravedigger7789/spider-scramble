@@ -10,7 +10,9 @@ func _on_Player_max_health_changed(health):
 	for i in health:
 		var heart_container := TextureRect.new()
 		heart_container.texture = heart_texture
-		add_child(heart_container)
+		var center_container := CenterContainer.new()
+		center_container.add_child(heart_container)
+		add_child(center_container)
 
 
 func _on_Player_health_changed(health):

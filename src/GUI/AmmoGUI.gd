@@ -12,7 +12,9 @@ func _on_Player_max_ammo_changed(ammo):
 		ammo_container.texture = ammo_texture
 		# ammo_container.rect_rotation = -90
 		# ammo_container.rect_position.y = ammo_container.texture.get_width()
-		add_child(ammo_container)
+		var center_container := CenterContainer.new()
+		center_container.add_child(ammo_container)
+		add_child(center_container)
 
 
 func _on_Player_ammo_changed(ammo):
