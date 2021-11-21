@@ -8,18 +8,28 @@
 [ext_resource path="res://src/GUI/ScoreGUI.gd" type="Script" id=6]
 [ext_resource path="res://src/GUI/ScoreGUI.tscn" type="PackedScene" id=7]
 
-[node name="GameGUI" type="HBoxContainer"]
-margin_left = 45.0
-margin_top = 400.0
-margin_right = 552.0
-margin_bottom = 46.0
-custom_constants/separation = 64
+[node name="GameGUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.9
+anchor_right = 0.5
+anchor_bottom = 0.9
+margin_left = -276.0
+margin_top = -46.0
+margin_right = 276.0
+custom_constants/separation = 64
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
 margin_right = 96.0
 margin_bottom = 46.0
 custom_styles/panel = ExtResource( 4 )
@@ -27,13 +37,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HealthGUI" parent="PanelContainer" instance=ExtResource( 1 )]
+[node name="HealthGUI" parent="HBoxContainer/PanelContainer" instance=ExtResource( 1 )]
 margin_left = 8.0
 margin_top = 11.0
 margin_right = 88.0
 margin_bottom = 35.0
 
-[node name="PanelContainer2" type="PanelContainer" parent="."]
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer"]
 margin_left = 160.0
 margin_right = 392.0
 margin_bottom = 46.0
@@ -42,14 +52,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AmmoGUI" parent="PanelContainer2" instance=ExtResource( 2 )]
+[node name="AmmoGUI" parent="HBoxContainer/PanelContainer2" instance=ExtResource( 2 )]
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 224.0
 margin_bottom = 38.0
 script = ExtResource( 3 )
 
-[node name="PanelContainer3" type="PanelContainer" parent="."]
+[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer"]
 margin_left = 456.0
 margin_right = 552.0
 margin_bottom = 46.0
@@ -58,7 +68,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ScoreGUI" parent="PanelContainer3" instance=ExtResource( 7 )]
+[node name="ScoreGUI" parent="HBoxContainer/PanelContainer3" instance=ExtResource( 7 )]
 margin_left = 8.0
 margin_top = 16.0
 margin_right = 88.0

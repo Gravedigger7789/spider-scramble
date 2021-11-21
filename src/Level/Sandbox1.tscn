@@ -9,11 +9,9 @@
 [ext_resource path="res://src/Objects/Obstacle.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Objects/Heart.tscn" type="PackedScene" id=8]
 
-[node name="Sandbox1" type="Node2D"]
+[node name="Sandbox1" type="Node"]
 
 [node name="GameGUI" parent="." instance=ExtResource( 1 )]
-margin_right = 597.0
-margin_bottom = 446.0
 player_path = NodePath("../Player")
 
 [node name="TreeBackground" parent="." instance=ExtResource( 4 )]

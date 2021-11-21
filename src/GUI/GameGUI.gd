@@ -1,10 +1,10 @@
-extends HBoxContainer
+extends Control
 
 export(NodePath) var player_path
 onready var player: Player = get_node(player_path)
-onready var health_gui = $PanelContainer/HealthGUI
-onready var ammo_gui = $PanelContainer2/AmmoGUI
-onready var score_gui = $PanelContainer3/ScoreGUI
+onready var health_gui = $HBoxContainer/PanelContainer/HealthGUI
+onready var ammo_gui = $HBoxContainer/PanelContainer2/AmmoGUI
+onready var score_gui = $HBoxContainer/PanelContainer3/ScoreGUI
 
 
 func _ready():
