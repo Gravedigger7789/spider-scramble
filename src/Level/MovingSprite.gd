@@ -16,4 +16,4 @@ func _ready():
 
 
 func _physics_process(delta: float) -> void:
-	position += velocity * delta
+	position += velocity * delta * Difficulty.speed_modifier

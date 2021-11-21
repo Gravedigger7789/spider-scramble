@@ -13,6 +13,6 @@ func _ready():
 	foliage_spawner.sprite_velocity = velocity
 
 
-func _physics_process(delta: float) -> void:
-	var offset: Vector2 = get_scroll_offset() + velocity * delta
+func _process(delta: float) -> void:
+	var offset: Vector2 = get_scroll_offset() + velocity * delta * Difficulty.speed_modifier
 	set_scroll_offset(offset)

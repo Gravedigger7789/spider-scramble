@@ -16,4 +16,4 @@ func _on_Player_coins_changed(value):
 
 
 func _process(delta):
-	self.score += delta
+	self.score += delta * Difficulty.speed_modifier
