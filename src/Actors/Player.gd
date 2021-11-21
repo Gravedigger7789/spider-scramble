@@ -33,7 +33,7 @@ func _ready() -> void:
 
 
 func set_max_health(value: int) -> void:
-	max_health = max(1, value)
+	max_health = int(max(1, value))
 	emit_signal("max_health_changed", max_health)
 	self.health = max_health
 
@@ -48,7 +48,7 @@ func set_health(value: int) -> void:
 
 
 func set_max_ammo(value: int) -> void:
-	max_ammo = max(1, value)
+	max_ammo = int(max(1, value))
 	emit_signal("max_ammo_changed", max_ammo)
 	self.ammo = max_ammo
 
@@ -83,7 +83,7 @@ func _physics_process(delta: float) -> void:
 		var has_attacked = weapon.attack()
 		if has_attacked:
 			animation_player.travel("walk_attack")
-			self.ammo = max(ammo - 1, 0)
+			self.ammo = int(max(ammo - 1, 0))
 
 
 func take_damage() -> void:
