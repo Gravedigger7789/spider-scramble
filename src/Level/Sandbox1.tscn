@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://src/GUI/HealthGUI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/GUI/GameGUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Objects/ObstacleSpawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Level/TreeBackground.tscn" type="PackedScene" id=4]
@@ -8,11 +8,13 @@
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Objects/Obstacle.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Objects/Heart.tscn" type="PackedScene" id=8]
-[ext_resource path="res://src/GUI/PanelStyle.tres" type="StyleBox" id=9]
-[ext_resource path="res://src/GUI/AmmoGUI.tscn" type="PackedScene" id=10]
-[ext_resource path="res://src/GUI/ScoreGUI.tscn" type="PackedScene" id=11]
 
 [node name="Sandbox1" type="Node2D"]
+
+[node name="GameGUI" parent="." instance=ExtResource( 1 )]
+margin_right = 597.0
+margin_bottom = 446.0
+player_path = NodePath("../Player")
 
 [node name="TreeBackground" parent="." instance=ExtResource( 4 )]
 
@@ -26,63 +28,3 @@ obstacles = [ ExtResource( 7 ), ExtResource( 5 ) ]
 [node name="PickupSpawner" parent="." instance=ExtResource( 3 )]
 position = Vector2( 768, 229.081 )
 obstacles = [ ExtResource( 6 ), ExtResource( 8 ) ]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_left = 45.0
-margin_top = 400.0
-margin_right = 552.0
-margin_bottom = 46.0
-custom_constants/separation = 64
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
-margin_right = 96.0
-margin_bottom = 46.0
-custom_styles/panel = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HealthGUI" parent="HBoxContainer/PanelContainer" instance=ExtResource( 1 )]
-margin_left = 8.0
-margin_top = 11.0
-margin_right = 88.0
-margin_bottom = 35.0
-
-[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer"]
-margin_left = 160.0
-margin_right = 392.0
-margin_bottom = 46.0
-custom_styles/panel = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AmmoGUI" parent="HBoxContainer/PanelContainer2" instance=ExtResource( 10 )]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 224.0
-margin_bottom = 38.0
-
-[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer"]
-margin_left = 456.0
-margin_right = 552.0
-margin_bottom = 46.0
-custom_styles/panel = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ScoreGUI" parent="HBoxContainer/PanelContainer3" instance=ExtResource( 11 )]
-margin_left = 8.0
-margin_top = 16.0
-margin_right = 88.0
-margin_bottom = 30.0
-
-[connection signal="ammo_changed" from="Player" to="HBoxContainer/PanelContainer2/AmmoGUI" method="_on_Player_ammo_changed"]
-[connection signal="coins_changed" from="Player" to="HBoxContainer/PanelContainer3/ScoreGUI" method="_on_Player_coins_changed"]
-[connection signal="health_changed" from="Player" to="HBoxContainer/PanelContainer/HealthGUI" method="_on_Player_health_changed"]
-[connection signal="max_ammo_changed" from="Player" to="HBoxContainer/PanelContainer2/AmmoGUI" method="_on_Player_max_ammo_changed"]
-[connection signal="max_health_changed" from="Player" to="HBoxContainer/PanelContainer/HealthGUI" method="_on_Player_max_health_changed"]
