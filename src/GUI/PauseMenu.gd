@@ -9,8 +9,8 @@ func _ready():
 
 func show() -> void:
 	get_tree().paused = true
-	.show()
 	continue_button.grab_focus()
+	.show()
 
 
 func _on_ContinueButton_pressed():

@@ -79,7 +79,10 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y *= 0.6
 
+
+func _input(event):
 	if self.can_attack && Input.is_action_just_pressed("attack"):
+		get_tree().set_input_as_handled()
 		var has_attacked = weapon.attack()
 		if has_attacked:
 			animation_player.travel("walk_attack")
