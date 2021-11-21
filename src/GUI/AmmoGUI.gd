@@ -20,4 +20,4 @@ func _on_Player_max_ammo_changed(ammo):
 func _on_Player_ammo_changed(ammo):
 	for i in get_child_count():
 		var ammo_container: TextureRect = get_child(i).get_node(ammo_container_node)
-		ammo_container.modulate = Color(1, 1, 1) if ammo > i else Color(0.1, 0.1, 0.1)
+		ammo_container.modulate = Color(1, 1, 1, 1) if ammo > i else Color(0.1, 0.1, 0.1, 0.5)
