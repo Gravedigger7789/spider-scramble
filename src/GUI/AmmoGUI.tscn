@@ -9,14 +9,66 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="PlaceHolderCenterContainer" type="CenterContainer" parent="."]
 margin_right = 40.0
 margin_bottom = 30.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlaceHolder" type="TextureRect" parent="CenterContainer"]
+[node name="PlaceHolderTextureRect" type="TextureRect" parent="PlaceHolderCenterContainer"]
+margin_right = 40.0
+margin_bottom = 30.0
+texture = ExtResource( 1 )
+
+[node name="PlaceHolderCenterContainer5" type="CenterContainer" parent="."]
+margin_left = 44.0
+margin_right = 84.0
+margin_bottom = 30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlaceHolderTextureRect" type="TextureRect" parent="PlaceHolderCenterContainer5"]
+margin_right = 40.0
+margin_bottom = 30.0
+texture = ExtResource( 1 )
+
+[node name="PlaceHolderCenterContainer4" type="CenterContainer" parent="."]
+margin_left = 88.0
+margin_right = 128.0
+margin_bottom = 30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlaceHolderTextureRect" type="TextureRect" parent="PlaceHolderCenterContainer4"]
+margin_right = 40.0
+margin_bottom = 30.0
+texture = ExtResource( 1 )
+
+[node name="PlaceHolderCenterContainer3" type="CenterContainer" parent="."]
+margin_left = 132.0
+margin_right = 172.0
+margin_bottom = 30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlaceHolderTextureRect" type="TextureRect" parent="PlaceHolderCenterContainer3"]
+margin_right = 40.0
+margin_bottom = 30.0
+texture = ExtResource( 1 )
+
+[node name="PlaceHolderCenterContainer2" type="CenterContainer" parent="."]
+margin_left = 176.0
+margin_right = 216.0
+margin_bottom = 30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlaceHolderTextureRect" type="TextureRect" parent="PlaceHolderCenterContainer2"]
 margin_right = 40.0
 margin_bottom = 30.0
 texture = ExtResource( 1 )
