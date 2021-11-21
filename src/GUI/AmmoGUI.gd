@@ -1,7 +1,8 @@
 extends HBoxContainer
 
-
 var ammo_texture := preload("res://assets/player/acid_shot_2.png")
+var ammo_container_node = "HeartContainer"
+
 
 func _on_Player_max_ammo_changed(ammo):
 	for child in get_children():
@@ -9,9 +10,8 @@ func _on_Player_max_ammo_changed(ammo):
 		child.queue_free()
 	for i in ammo:
 		var ammo_container := TextureRect.new()
+		ammo_container.name = ammo_container_node
 		ammo_container.texture = ammo_texture
-		# ammo_container.rect_rotation = -90
-		# ammo_container.rect_position.y = ammo_container.texture.get_width()
 		var center_container := CenterContainer.new()
 		center_container.add_child(ammo_container)
 		add_child(center_container)
@@ -19,4 +19,5 @@ func _on_Player_max_ammo_changed(ammo):
 
 func _on_Player_ammo_changed(ammo):
 	for i in get_child_count():
-		get_child(i).visible = ammo > i
+		var ammo_container: TextureRect = get_child(i).get_node(ammo_container_node)
+		ammo_container.modulate = Color(1, 1, 1) if ammo > i else Color(0.1, 0.1, 0.1)
