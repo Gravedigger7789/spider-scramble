@@ -6,6 +6,7 @@ signal health_changed(health)
 signal health_depleted
 signal max_ammo_changed(ammo)
 signal ammo_changed(ammo)
+signal coins_changed(coins)
 
 const JUMP_SPEED := 550.0
 const TERMINAL_VELOCITY := 550.0
@@ -15,9 +16,9 @@ var health: int setget set_health
 var max_ammo: int setget set_max_ammo
 var ammo: int setget set_ammo
 var velocity := Vector2()
-var coins := 0
+var coins := 0 setget set_coins
 
-export var can_attack := true setget ,get_can_attack
+export var can_attack := true setget , get_can_attack
 
 onready var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 onready var weapon: Weapon = $Weapon
@@ -58,6 +59,12 @@ func set_ammo(value: int) -> void:
 		emit_signal("ammo_changed", ammo)
 
 
+func set_coins(value: int) -> void:
+	if coins != value:
+		coins = value
+		emit_signal("coins_changed", coins)
+
+
 func get_can_attack() -> bool:
 	return can_attack and ammo > 0
 
@@ -85,8 +92,7 @@ func take_damage() -> void:
 
 
 func collect_coin(value: int) -> void:
-	coins += value
-	print(coins)
+	self.coins += value
 
 
 func heal(value: int) -> void:
@@ -94,5 +100,5 @@ func heal(value: int) -> void:
 		self.health = int(clamp(health + value, 0, max_health))
 	elif health < max_health:
 		self.health = int(clamp(health + value, 0, max_health))
-	else: 
+	else:
 		self.ammo = int(clamp(ammo + value, 0, max_ammo))

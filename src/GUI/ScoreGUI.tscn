@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/GUI/ScoreGUI.gd" type="Script" id=2]
+
+[node name="ScoreGUI" type="HBoxContainer"]
+margin_right = 80.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 80, 0 )
+size_flags_vertical = 4
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 80.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CenterContainer"]
+margin_left = 14.0
+margin_right = 66.0
+margin_bottom = 14.0
+text = "999,999"
+align = 2

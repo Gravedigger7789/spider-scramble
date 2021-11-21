@@ -4,6 +4,7 @@
 [ext_resource path="res://src/GUI/AmmoGUI.gd" type="Script" id=2]
 
 [node name="AmmoGUI" type="HBoxContainer"]
+size_flags_vertical = 4
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
