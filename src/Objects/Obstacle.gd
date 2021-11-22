@@ -26,5 +26,7 @@ func play_contact_sound() -> void:
 	set_deferred("monitorable", false)
 	set_deferred("monitoring", false)
 	visible = false
-	audio_player.connect("finished", self, "queue_free")
+	var connected = audio_player.connect("finished", self, "queue_free")
+	if connected != OK:
+		push_warning("Could not connect contact sound finished")
 	audio_player.play()

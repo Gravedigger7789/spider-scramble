@@ -14,7 +14,9 @@ func _on_Projectile_body_entered(body: Node) -> void:
 	set_deferred("monitorable", false)
 	set_deferred("monitoring", false)
 	visible = false
-	hit_sound.connect("finished", self, "queue_free")
+	var connected = hit_sound.connect("finished", self, "queue_free")
+	if connected != OK:
+		push_warning("Could not connect hit sound finished")
 	hit_sound.play()
 	body.queue_free()
 
