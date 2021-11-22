@@ -26,6 +26,7 @@ onready var animation_player: AnimationNodeStateMachinePlayback = $AnimationTree
 	"parameters/playback"
 )
 onready var jump_sound: AudioStreamPlayer = $JumpSound
+onready var no_ammo_attack_sound: AudioStreamPlayer = $NoAmmoAttackSound
 
 
 func _ready() -> void:
@@ -89,6 +90,8 @@ func _input(event: InputEvent):
 		if has_attacked:
 			animation_player.travel("walk_attack")
 			self.ammo = int(max(ammo - 1, 0))
+	elif can_attack && ammo <= 0 && !no_ammo_attack_sound.playing:
+		no_ammo_attack_sound.play()
 
 
 func take_damage() -> void:
