@@ -32,3 +32,4 @@ obstacles = [ ExtResource( 6 ), ExtResource( 8 ) ]
 stream = ExtResource( 9 )
 autoplay = true
 mix_target = 1
+bus = "Level"
