@@ -84,9 +84,7 @@ margin_bottom = 38.0
 layer = 100
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource( 4 )]
-visible = false
 
 [node name="MainMenu" parent="CanvasLayer" instance=ExtResource( 6 )]
-visible = false
 
 [node name="GameOverMenu" parent="CanvasLayer" instance=ExtResource( 8 )]
