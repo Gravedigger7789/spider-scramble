@@ -7,7 +7,7 @@ onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 
 func _ready() -> void:
-	Difficulty.speed_modifier = 1
+	Difficulty.reset()
 	randomize()
 
 func _on_AudioStreamPlayer_finished() -> void:
