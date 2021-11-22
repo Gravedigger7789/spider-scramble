@@ -4,7 +4,7 @@ class_name Weapon
 const Projectile := preload("res://src/Weapons/Projectile.tscn")
 
 onready var cooldown_timer: Timer = $Cooldown
-onready var attack_sound: AudioStreamPlayer2D = $AttackSound
+onready var attack_sound: AudioStreamPlayer = $AttackSound
 
 func attack() -> bool:
 	var has_attacked := false

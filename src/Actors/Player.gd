@@ -25,7 +25,7 @@ onready var weapon: Weapon = $Weapon
 onready var animation_player: AnimationNodeStateMachinePlayback = $AnimationTree.get(
 	"parameters/playback"
 )
-onready var jump_sound: AudioStreamPlayer2D = $JumpSound
+onready var jump_sound: AudioStreamPlayer = $JumpSound
 
 
 func _ready() -> void:

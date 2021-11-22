@@ -186,7 +186,7 @@ graph_offset = Vector2( -23, -20 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 1 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -207,10 +207,10 @@ active = true
 parameters/playback = SubResource( 10 )
 parameters/damage/Add2/add_amount = 1.0
 
-[node name="DamageSound" type="AudioStreamPlayer2D" parent="."]
+[node name="DamageSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 bus = "Sound Effects"
 
-[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 bus = "Sound Effects"

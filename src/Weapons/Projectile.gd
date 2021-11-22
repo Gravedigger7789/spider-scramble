@@ -3,7 +3,7 @@ class_name Projectile
 
 const SPEED := 500.0
 
-onready var hit_sound: AudioStreamPlayer2D = $HitSound
+onready var hit_sound: AudioStreamPlayer = $HitSound
 
 
 func _physics_process(delta: float) -> void:

@@ -34,5 +34,5 @@ shape = SubResource( 1 )
 [node name="VisibilityNotifier2D" parent="." index="4"]
 rect = Rect2( -24, -24, 48, 48 )
 
-[node name="AudioStreamPlayer2D" parent="." index="5"]
+[node name="AudioStreamPlayer" parent="." index="5"]
 stream = ExtResource( 5 )
