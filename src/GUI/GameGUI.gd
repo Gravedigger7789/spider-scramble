@@ -2,9 +2,9 @@ extends Control
 
 export(NodePath) var player_path
 onready var player: Player = get_node(player_path)
-onready var health_gui = $HBoxContainer/PanelContainer/HealthGUI
-onready var ammo_gui = $HBoxContainer/PanelContainer2/AmmoGUI
-onready var score_gui = $HBoxContainer/PanelContainer3/ScoreGUI
+onready var health_gui = $CenterContainer/HBoxContainer/PanelContainer/HealthGUI
+onready var ammo_gui = $CenterContainer/HBoxContainer/PanelContainer2/AmmoGUI
+onready var score_gui = $CenterContainer/HBoxContainer/PanelContainer3/ScoreGUI
 onready var pause_menu = $CanvasLayer/PauseMenu
 onready var game_over_menu = $CanvasLayer/GameOverMenu
 
