@@ -5,7 +5,7 @@ export var speed := 400.0
 
 onready var sprite: Sprite = $Sprite
 onready var size := Vector2(sprite.texture.get_width(), sprite.texture.get_height())
-onready var audio_player : AudioStreamPlayer = $AudioStreamPlayer
+onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
 
 
 func _physics_process(delta: float) -> void:

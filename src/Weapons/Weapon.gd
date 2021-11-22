@@ -6,6 +6,7 @@ const Projectile := preload("res://src/Weapons/Projectile.tscn")
 onready var cooldown_timer: Timer = $Cooldown
 onready var attack_sound: AudioStreamPlayer = $AttackSound
 
+
 func attack() -> bool:
 	var has_attacked := false
 	if cooldown_timer.is_stopped():

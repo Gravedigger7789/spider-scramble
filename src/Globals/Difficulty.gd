@@ -1,6 +1,5 @@
 extends Node
 
-
 var speed_modifier = 1.0
 var difficulty_increase_seconds := 5.0
 var difficulty_increase = 0.1

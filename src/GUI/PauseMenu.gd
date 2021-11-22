@@ -1,6 +1,5 @@
 extends Control
 
-
 export(AudioStreamSample) var pause_sound: AudioStreamSample
 export(AudioStreamSample) var resume_sound: AudioStreamSample
 
