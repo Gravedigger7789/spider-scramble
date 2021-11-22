@@ -8,7 +8,7 @@ onready var size := Vector2(sprite.texture.get_width(), sprite.texture.get_heigh
 
 
 func _physics_process(delta: float) -> void:
-	position.x -= SPEED * delta
+	position.x -= SPEED * delta * Difficulty.speed_modifier
 
 
 func _on_Obstacle_body_entered(body: Node) -> void:

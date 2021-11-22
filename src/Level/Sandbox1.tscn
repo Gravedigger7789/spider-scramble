@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
+[ext_resource path="res://src/GUI/GameGUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Objects/ObstacleSpawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Level/TreeBackground.tscn" type="PackedScene" id=4]
@@ -8,11 +9,14 @@
 [ext_resource path="res://src/Objects/Obstacle.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Objects/Heart.tscn" type="PackedScene" id=8]
 
-[node name="Sandbox1" type="Node2D"]
+[node name="Sandbox1" type="Node"]
+
+[node name="GameGUI" parent="." instance=ExtResource( 1 )]
+player_path = NodePath("../Player")
 
 [node name="TreeBackground" parent="." instance=ExtResource( 4 )]
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+[node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 112, 96 )
 
 [node name="ObstacleSpawner" parent="." instance=ExtResource( 3 )]

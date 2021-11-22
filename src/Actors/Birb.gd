@@ -15,6 +15,7 @@ onready var jump_timer: Timer = $JumpTimer
 onready var sprite: Sprite = $Sprite
 onready var animation_player: AnimationPlayer = $AnimationPlayer
 onready var size := Vector2(sprite.texture.get_width(), sprite.texture.get_height())
+onready var original_veloicty := velocity
 
 
 func _ready() -> void:
@@ -37,6 +38,7 @@ func jump() -> void:
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
 	velocity.y = min(TERMINAL_VELOCITY, velocity.y)
+	velocity.x = original_veloicty.x * Difficulty.speed_modifier
 	velocity = move_and_slide(velocity, Vector2.UP)
 	if velocity.y > 0:
 		animation_player.play("fall")
@@ -49,7 +51,7 @@ func _on_JumpTimer_timeout() -> void:
 	randomize_jump_time()
 
 
-func _on_Area2D_body_entered(body):
+func _on_Area2D_body_entered(body: Node):
 	if body is Player:
 		queue_free()
 		body.take_damage()
