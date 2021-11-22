@@ -67,5 +67,6 @@ anims/idle = SubResource( 3 )
 stream = ExtResource( 4 )
 bus = "Sound Effects"
 
+[connection signal="area_entered" from="." to="." method="_on_Projectile_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Projectile_body_entered"]
 [connection signal="timeout" from="Expiration" to="." method="_on_Expiration_timeout"]

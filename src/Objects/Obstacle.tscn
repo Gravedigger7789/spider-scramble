@@ -7,7 +7,7 @@
 extents = Vector2( 32, 28 )
 
 [node name="Obstacle" type="Area2D"]
-collision_layer = 4
+collision_layer = 2
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true

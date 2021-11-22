@@ -11,6 +11,20 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_Projectile_body_entered(body: Node) -> void:
+	hit()
+	body.queue_free()
+
+
+func _on_Projectile_area_entered(area: Area2D) -> void:
+	hit()
+	area.queue_free()
+
+
+func _on_Expiration_timeout():
+	queue_free()
+
+
+func hit() -> void:
 	set_deferred("monitorable", false)
 	set_deferred("monitoring", false)
 	visible = false
@@ -18,8 +32,3 @@ func _on_Projectile_body_entered(body: Node) -> void:
 	if connected != OK:
 		push_warning("Could not connect hit sound finished")
 	hit_sound.play()
-	body.queue_free()
-
-
-func _on_Expiration_timeout():
-	queue_free()
