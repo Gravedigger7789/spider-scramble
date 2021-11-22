@@ -51,7 +51,7 @@ func _on_JumpTimer_timeout() -> void:
 	randomize_jump_time()
 
 
-func _on_Area2D_body_entered(body):
+func _on_Area2D_body_entered(body: Node):
 	if body is Player:
 		queue_free()
 		body.take_damage()

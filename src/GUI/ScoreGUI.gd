@@ -11,9 +11,9 @@ func set_score(value: float) -> void:
 		label.text = "%.0f" % (score + coins)
 
 
-func _on_Player_coins_changed(value):
+func _on_Player_coins_changed(value: int) -> void:
 	coins = value
 
 
-func _process(delta):
+func _process(delta: float) -> void:
 	self.score += delta * Difficulty.speed_modifier
