@@ -68,7 +68,7 @@ func set_coins(value: int) -> void:
 
 
 func get_can_attack() -> bool:
-	return can_attack and ammo > 0
+	return can_attack && ammo > 0
 
 
 func _physics_process(delta: float) -> void:
@@ -76,10 +76,10 @@ func _physics_process(delta: float) -> void:
 	velocity.y = min(TERMINAL_VELOCITY, velocity.y)
 	velocity = move_and_slide(velocity, Vector2.UP)
 
-	if is_on_floor() and Input.is_action_just_pressed("jump"):
+	if is_on_floor() && Input.is_action_just_pressed("jump"):
 		velocity.y = -JUMP_SPEED
 		jump_sound.play()
-	if Input.is_action_just_released("jump") and velocity.y < 0:
+	if Input.is_action_just_released("jump") && velocity.y < 0:
 		velocity.y *= 0.6
 
 
