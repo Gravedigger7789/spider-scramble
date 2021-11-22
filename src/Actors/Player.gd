@@ -81,7 +81,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _input(event):
-	if self.can_attack && Input.is_action_just_pressed("attack"):
+	if self.can_attack && event.is_action_pressed("attack"):
 		get_tree().set_input_as_handled()
 		var has_attacked = weapon.attack()
 		if has_attacked:

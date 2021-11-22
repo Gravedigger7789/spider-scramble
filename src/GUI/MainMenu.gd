@@ -6,7 +6,11 @@ func _ready():
 
 
 func _input(event):
-	if Input.is_action_pressed("attack") or Input.is_action_pressed("jump") or Input.is_action_pressed("pause"):
+	if (
+		event.is_action_pressed("attack")
+		or event.is_action_pressed("jump")
+		or event.is_action_pressed("pause")
+	):
 		get_tree().set_input_as_handled()
 		hide()
 		set_process_input(false)

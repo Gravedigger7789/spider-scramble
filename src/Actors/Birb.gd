@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
 	velocity.y = min(TERMINAL_VELOCITY, velocity.y)
 	velocity.x = original_veloicty.x * Difficulty.speed_modifier
-	move_and_slide(velocity, Vector2.UP)
+	velocity = move_and_slide(velocity, Vector2.UP)
 	if velocity.y > 0:
 		animation_player.play("fall")
 	if is_on_floor():
