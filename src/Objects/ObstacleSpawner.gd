@@ -26,6 +26,7 @@ func spawn_random_obstacle() -> void:
 		if floor_raycast.is_colliding()
 		else global_position
 	)
+	floor_position.x = get_viewport().size.x
 	obstacle.global_position = floor_position
 
 
