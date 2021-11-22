@@ -17,7 +17,7 @@ func _on_Player_max_health_changed(health: int) -> void:
 		add_child(center_container)
 
 
-func _on_Player_health_changed(health) -> void:
+func _on_Player_health_changed(health: int) -> void:
 	for i in get_child_count():
 		var heart_container: TextureRect = get_child(i).get_node(heart_container_node)
 		heart_container.modulate = Color(1, 1, 1, 1) if health > i else Color(0.1, 0.1, 0.1, 0.5)
