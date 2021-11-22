@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/GUI/GameTheme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/fonts/Cabin/Cabin-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://src/GUI/PauseMenu.gd" type="Script" id=3]
+[ext_resource path="res://sounds/menu/pause.wav" type="AudioStream" id=4]
+[ext_resource path="res://sounds/menu/resume.wav" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -19,6 +21,8 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+pause_sound = ExtResource( 4 )
+resume_sound = ExtResource( 5 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -63,6 +67,10 @@ margin_bottom = 162.0
 rect_min_size = Vector2( 120, 0 )
 size_flags_horizontal = 4
 text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "Sound Effects"
 
 [connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/ContinueButton" to="." method="_on_ContinueButton_pressed"]
 [connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
