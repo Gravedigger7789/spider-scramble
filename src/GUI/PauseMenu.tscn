@@ -69,7 +69,6 @@ size_flags_horizontal = 4
 text = "Quit"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
 bus = "Sound Effects"
 
 [connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/ContinueButton" to="." method="_on_ContinueButton_pressed"]
