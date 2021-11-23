@@ -1,0 +1,166 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://assets/forest/forestback-1.png" type="Texture" id=1]
+[ext_resource path="res://assets/forest/forestback-2.png" type="Texture" id=2]
+[ext_resource path="res://assets/forest/forestback-3.png" type="Texture" id=3]
+[ext_resource path="res://assets/forest/treetop.png" type="Texture" id=4]
+[ext_resource path="res://assets/splash/splash_tree.png" type="Texture" id=5]
+[ext_resource path="res://assets/forest/floor-1.png" type="Texture" id=6]
+[ext_resource path="res://assets/forest/floor-3.png" type="Texture" id=7]
+[ext_resource path="res://assets/forest/floor-2.png" type="Texture" id=8]
+[ext_resource path="res://assets/splash/splash_bush.png" type="Texture" id=9]
+[ext_resource path="res://assets/splash/splash_foliage.png" type="Texture" id=10]
+[ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/Level/SplashScreen.gd" type="Script" id=12]
+[ext_resource path="res://assets/player/acid_shot_2.png" type="Texture" id=13]
+[ext_resource path="res://assets/splash/splash.png" type="Texture" id=14]
+[ext_resource path="res://assets/player/spider_idle_mouth_open.png" type="Texture" id=15]
+[ext_resource path="res://src/Objects/Heart.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/Objects/Obstacle.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/enemy/bird_wings_neutral.png" type="Texture" id=18]
+[ext_resource path="res://src/GUI/SplashScreenFont.tres" type="DynamicFont" id=19]
+
+[node name="SplashScreen" type="Node"]
+script = ExtResource( 12 )
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundColor" type="TextureRect" parent="Control"]
+anchor_right = 1.0
+margin_bottom = 340.0
+texture = ExtResource( 1 )
+stretch_mode = 2
+
+[node name="BackgroundTrees" type="TextureRect" parent="Control"]
+anchor_right = 1.0
+margin_bottom = 340.0
+texture = ExtResource( 2 )
+stretch_mode = 2
+
+[node name="MidgroundTrees" type="TextureRect" parent="Control"]
+anchor_right = 1.0
+margin_bottom = 340.0
+texture = ExtResource( 3 )
+stretch_mode = 2
+
+[node name="ForegroundTree" type="TextureRect" parent="Control"]
+anchor_right = 1.0
+margin_bottom = 480.0
+texture = ExtResource( 5 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ForegroundBushes" type="TextureRect" parent="Control"]
+anchor_right = 1.0
+margin_bottom = 155.0
+texture = ExtResource( 9 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Foreground" type="CanvasLayer" parent="Control"]
+
+[node name="ForegroundTreeTop" type="TextureRect" parent="Control/Foreground"]
+anchor_right = 1.0
+margin_bottom = 155.0
+texture = ExtResource( 4 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ForegroundTreeTopFoliage" type="TextureRect" parent="Control/Foreground"]
+anchor_right = 1.0
+margin_bottom = 480.0
+texture = ExtResource( 10 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -144.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Grass" type="TextureRect" parent="Control/VBoxContainer"]
+margin_right = 640.0
+margin_bottom = 64.0
+texture = ExtResource( 6 )
+stretch_mode = 2
+
+[node name="Dirt" type="TextureRect" parent="Control/VBoxContainer"]
+margin_top = 64.0
+margin_right = 640.0
+margin_bottom = 128.0
+texture = ExtResource( 8 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dirt2" type="TextureRect" parent="Control/VBoxContainer"]
+margin_top = 128.0
+margin_right = 640.0
+margin_bottom = 192.0
+texture = ExtResource( 7 )
+stretch_mode = 2
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Player" type="Sprite" parent="."]
+position = Vector2( 112, 315 )
+texture = ExtResource( 15 )
+
+[node name="Projectile" type="Sprite" parent="Player"]
+position = Vector2( 62, 10 )
+texture = ExtResource( 13 )
+
+[node name="Heart" parent="." instance=ExtResource( 16 )]
+position = Vector2( 504, 240 )
+speed = 0.0
+
+[node name="Coin" parent="." instance=ExtResource( 11 )]
+position = Vector2( 368, 240 )
+speed = 0.0
+
+[node name="Obstacle" parent="." instance=ExtResource( 17 )]
+position = Vector2( 560, 312 )
+speed = 0.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Birb" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 504, 96 )
+texture = ExtResource( 18 )
+
+[node name="Label" type="Label" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 72.0
+margin_top = -85.0
+margin_right = 401.0
+margin_bottom = -8.0
+custom_fonts/font = ExtResource( 19 )
+text = "GitHub Game Off
+Spider Run"
+__meta__ = {
+"_edit_use_anchors_": false
+}
