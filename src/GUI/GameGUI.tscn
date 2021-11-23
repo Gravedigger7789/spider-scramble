@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/GUI/HealthGUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/GUI/AmmoGUI.tscn" type="PackedScene" id=2]
@@ -8,7 +8,12 @@
 [ext_resource path="res://src/GUI/MainMenu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/GUI/ScoreGUI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/GUI/GameOverMenu.tscn" type="PackedScene" id=8]
-[ext_resource path="res://icon.png" type="Texture" id=9]
+[ext_resource path="res://assets/mobile/button_shoot.png" type="Texture" id=9]
+[ext_resource path="res://assets/mobile/button_pause.png" type="Texture" id=10]
+[ext_resource path="res://assets/mobile/button_jump.png" type="Texture" id=11]
+[ext_resource path="res://assets/mobile/button_jump_pressed.png" type="Texture" id=12]
+[ext_resource path="res://assets/mobile/button_shoot_pressed.png" type="Texture" id=13]
+[ext_resource path="res://assets/mobile/button_pause_pressed.png" type="Texture" id=14]
 
 [node name="GameGUI" type="Control"]
 anchor_right = 1.0
@@ -94,9 +99,10 @@ layer = 100
 layer = 101
 
 [node name="JumpButton" type="TouchScreenButton" parent="MobileButtons"]
-modulate = Color( 0, 1, 0, 0.392157 )
+modulate = Color( 1, 1, 1, 0.588235 )
 position = Vector2( 32, 384 )
-normal = ExtResource( 9 )
+normal = ExtResource( 11 )
+pressed = ExtResource( 12 )
 action = "jump"
 visibility_mode = 1
 
@@ -109,15 +115,17 @@ __meta__ = {
 }
 
 [node name="AttackButton" type="TouchScreenButton" parent="MobileButtons/RightAlignment"]
-modulate = Color( 1, 0, 0, 0.392157 )
+modulate = Color( 1, 1, 1, 0.588235 )
 position = Vector2( -96, 384 )
 normal = ExtResource( 9 )
+pressed = ExtResource( 13 )
 action = "attack"
 visibility_mode = 1
 
 [node name="PauseButton" type="TouchScreenButton" parent="MobileButtons/RightAlignment"]
-modulate = Color( 0, 0, 1, 0.392157 )
+modulate = Color( 1, 1, 1, 0.588235 )
 position = Vector2( -80, 16 )
-normal = ExtResource( 9 )
+normal = ExtResource( 10 )
+pressed = ExtResource( 14 )
 action = "pause"
 visibility_mode = 1
