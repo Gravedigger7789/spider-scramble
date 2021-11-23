@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://assets/forest/forestback-1.png" type="Texture" id=1]
 [ext_resource path="res://assets/forest/forestback-2.png" type="Texture" id=2]
@@ -24,6 +24,8 @@
 [ext_resource path="res://assets/collect/coin_center.png" type="Texture" id=22]
 [ext_resource path="res://assets/fonts/Cabin/Cabin-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=23]
 [ext_resource path="res://assets/collect/web.png" type="Texture" id=24]
+[ext_resource path="res://assets/mobile/button_jump.png" type="Texture" id=25]
+[ext_resource path="res://assets/mobile/button_shoot.png" type="Texture" id=26]
 
 [sub_resource type="DynamicFont" id=1]
 size = 42
@@ -187,7 +189,8 @@ __meta__ = {
 }
 
 [node name="Hints" type="Control" parent="."]
-anchor_top = 0.75
+modulate = Color( 1, 1, 1, 0.588235 )
+anchor_top = 0.725
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 14 )
@@ -196,23 +199,57 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Hints"]
-anchor_left = 0.05
-anchor_top = 0.5
-anchor_right = 0.05
-anchor_bottom = 0.5
-margin_top = -26.0
+visible = false
 margin_right = 232.0
-margin_bottom = 26.0
+margin_bottom = 52.0
 custom_fonts/font = SubResource( 1 )
 text = "Click to Play !"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="GridContainer" type="GridContainer" parent="Hints"]
+margin_right = 40.0
+margin_bottom = 40.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Hints/GridContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_clip_content = true
+texture = ExtResource( 25 )
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Hints/GridContainer"]
+margin_left = 68.0
+margin_top = 17.0
+margin_right = 282.0
+margin_bottom = 47.0
+text = "Jump: Space, Up, A, Y"
+
+[node name="TextureRect2" type="TextureRect" parent="Hints/GridContainer"]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+texture = ExtResource( 26 )
+
+[node name="Label2" type="Label" parent="Hints/GridContainer"]
+margin_left = 68.0
+margin_top = 85.0
+margin_right = 282.0
+margin_bottom = 115.0
+text = "Attack: Z, Click, X, B"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Hints"]
-anchor_left = 0.95
+anchor_left = 0.975
 anchor_top = 0.5
-anchor_right = 0.95
+anchor_right = 0.975
 anchor_bottom = 0.5
 margin_left = -324.0
 margin_top = -40.0
@@ -297,9 +334,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -203.0
+margin_left = -187.0
 margin_top = -60.0
-margin_right = -145.0
+margin_right = -129.0
 margin_bottom = -30.0
 text = "Avoid"
 __meta__ = {
@@ -311,9 +348,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -344.0
+margin_left = -328.0
 margin_top = -60.0
-margin_right = -273.0
+margin_right = -257.0
 margin_bottom = -30.0
 text = "Collect"
 __meta__ = {
