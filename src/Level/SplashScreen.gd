@@ -1,21 +1,15 @@
 extends Node
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export (PackedScene) var first_scene := preload("res://src/Level/Sandbox1.tscn")
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-#	get_tree().paused = true
-#	$Player.set_physics_process(false)
-#	$Player.set_process(false)
-#	$Player.set_process_input(false)
-	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _input(event: InputEvent) -> void:
+	if (
+		event.is_action_pressed("attack")
+		or event.is_action_pressed("jump")
+		or event.is_action_pressed("pause")
+		or event is InputEventMouseButton
+	):
+		get_tree().set_input_as_handled()
+		get_tree().change_scene_to(first_scene)

@@ -57,7 +57,7 @@ _global_script_class_icons={
 [application]
 
 config/name="gh-game-off-bug"
-run/main_scene="res://src/Level/Sandbox1.tscn"
+run/main_scene="res://src/Level/SplashScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
