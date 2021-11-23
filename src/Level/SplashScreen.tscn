@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/forest/forestback-1.png" type="Texture" id=1]
 [ext_resource path="res://assets/forest/forestback-2.png" type="Texture" id=2]
@@ -19,142 +19,160 @@
 [ext_resource path="res://src/Objects/Obstacle.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/enemy/bird_wings_neutral.png" type="Texture" id=18]
 [ext_resource path="res://src/GUI/SplashScreenFont.tres" type="DynamicFont" id=19]
-[ext_resource path="res://assets/fonts/Cabin/Cabin-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=20]
+[ext_resource path="res://assets/enemy/rock.png" type="Texture" id=20]
+[ext_resource path="res://assets/collect/fly.png" type="Texture" id=21]
+[ext_resource path="res://assets/collect/coin_center.png" type="Texture" id=22]
+[ext_resource path="res://assets/fonts/Cabin/Cabin-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=23]
+[ext_resource path="res://assets/collect/web.png" type="Texture" id=24]
 
 [sub_resource type="DynamicFont" id=1]
-resource_local_to_scene = true
-size = 64
+size = 42
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 20 )
+font_data = ExtResource( 23 )
 
 [node name="SplashScreen" type="Node"]
 script = ExtResource( 12 )
 
-[node name="Control" type="Control" parent="."]
+[node name="Background" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BackgroundColor" type="TextureRect" parent="Control"]
+[node name="BackgroundColor" type="TextureRect" parent="Background"]
 anchor_right = 1.0
 margin_bottom = 340.0
+mouse_filter = 2
 texture = ExtResource( 1 )
 stretch_mode = 2
 
-[node name="BackgroundTrees" type="TextureRect" parent="Control"]
+[node name="BackgroundTrees" type="TextureRect" parent="Background"]
 anchor_right = 1.0
 margin_bottom = 340.0
+mouse_filter = 2
 texture = ExtResource( 2 )
 stretch_mode = 2
 
-[node name="MidgroundTrees" type="TextureRect" parent="Control"]
+[node name="MidgroundTrees" type="TextureRect" parent="Background"]
 anchor_right = 1.0
 margin_bottom = 340.0
+mouse_filter = 2
 texture = ExtResource( 3 )
 stretch_mode = 2
 
-[node name="ForegroundTree" type="TextureRect" parent="Control"]
+[node name="ForegroundTree" type="TextureRect" parent="Background"]
 anchor_right = 1.0
 margin_bottom = 480.0
+mouse_filter = 2
 texture = ExtResource( 5 )
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ForegroundBushes" type="TextureRect" parent="Control"]
+[node name="ForegroundBushes" type="TextureRect" parent="Background"]
 anchor_right = 1.0
 margin_bottom = 155.0
+mouse_filter = 2
 texture = ExtResource( 9 )
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Foreground" type="CanvasLayer" parent="Control"]
+[node name="Foreground" type="CanvasLayer" parent="Background"]
 
-[node name="ForegroundTreeTop" type="TextureRect" parent="Control/Foreground"]
+[node name="ForegroundTreeTop" type="TextureRect" parent="Background/Foreground"]
 anchor_right = 1.0
 margin_bottom = 155.0
+mouse_filter = 2
 texture = ExtResource( 4 )
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ForegroundTreeTopFoliage" type="TextureRect" parent="Control/Foreground"]
+[node name="ForegroundTreeTopFoliage" type="TextureRect" parent="Background/Foreground"]
 anchor_right = 1.0
 margin_bottom = 480.0
+mouse_filter = 2
 texture = ExtResource( 10 )
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Background"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -144.0
+mouse_filter = 2
 custom_constants/separation = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Grass" type="TextureRect" parent="Control/VBoxContainer"]
+[node name="Grass" type="TextureRect" parent="Background/VBoxContainer"]
 margin_right = 640.0
 margin_bottom = 64.0
+mouse_filter = 2
 texture = ExtResource( 6 )
 stretch_mode = 2
 
-[node name="Dirt" type="TextureRect" parent="Control/VBoxContainer"]
+[node name="Dirt" type="TextureRect" parent="Background/VBoxContainer"]
 margin_top = 64.0
 margin_right = 640.0
 margin_bottom = 128.0
+mouse_filter = 2
 texture = ExtResource( 8 )
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Dirt2" type="TextureRect" parent="Control/VBoxContainer"]
+[node name="Dirt2" type="TextureRect" parent="Background/VBoxContainer"]
 margin_top = 128.0
 margin_right = 640.0
 margin_bottom = 192.0
+mouse_filter = 2
 texture = ExtResource( 7 )
 stretch_mode = 2
 
-[node name="Player" type="Sprite" parent="."]
+[node name="Foreground" type="Node" parent="."]
+
+[node name="Player" type="Sprite" parent="Foreground"]
 position = Vector2( 112, 317 )
 texture = ExtResource( 15 )
 
-[node name="Projectile" type="Sprite" parent="Player"]
+[node name="Projectile" type="Sprite" parent="Foreground/Player"]
 position = Vector2( 64, 9 )
 texture = ExtResource( 13 )
 
-[node name="Heart" parent="." instance=ExtResource( 16 )]
+[node name="Heart" parent="Foreground" instance=ExtResource( 16 )]
 position = Vector2( 504, 240 )
 speed = 0.0
 
-[node name="Coin" parent="." instance=ExtResource( 11 )]
+[node name="Coin" parent="Foreground" instance=ExtResource( 11 )]
 position = Vector2( 368, 240 )
 speed = 0.0
 
-[node name="Obstacle" parent="." instance=ExtResource( 17 )]
+[node name="Obstacle" parent="Foreground" instance=ExtResource( 17 )]
 position = Vector2( 560, 312 )
 speed = 0.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="Foreground"]
 layer = 2
 
-[node name="Birb" type="Sprite" parent="CanvasLayer"]
+[node name="Birb" type="Sprite" parent="Foreground/CanvasLayer"]
 position = Vector2( 504, 96 )
 texture = ExtResource( 18 )
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="Foreground"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 72.0
@@ -168,16 +186,191 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="."]
+[node name="Control" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.85
+anchor_right = 0.5
+anchor_bottom = 0.85
+margin_left = -320.0
+margin_right = 320.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="HBoxContainer" parent="Control"]
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 144.0
-margin_top = 136.0
-margin_right = 499.0
-margin_bottom = 214.0
+margin_left = -121.0
+margin_top = -20.0
+margin_right = 121.0
+margin_bottom = 20.0
 theme = ExtResource( 14 )
+custom_constants/separation = 16
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="Control/Buttons"]
+margin_right = 70.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 70, 0 )
+mouse_default_cursor_shape = 2
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="Control/Buttons"]
+margin_left = 86.0
+margin_right = 156.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 70, 0 )
+mouse_default_cursor_shape = 2
+text = "Quit"
+
+[node name="Button" type="Button" parent="Control/Buttons"]
+margin_left = 172.0
+margin_right = 242.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 70, 0 )
+mouse_default_cursor_shape = 16
+text = "Help!"
+
+[node name="Control2" type="Control" parent="."]
+anchor_top = 0.75
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control2"]
+anchor_left = 0.05
+anchor_top = 0.5
+anchor_right = 0.05
+anchor_bottom = 0.5
+margin_top = -26.0
+margin_right = 232.0
+margin_bottom = 26.0
 custom_fonts/font = SubResource( 1 )
 text = "Click to Play !"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control2"]
+anchor_left = 0.95
+anchor_top = 0.5
+anchor_right = 0.95
+anchor_bottom = 0.5
+margin_left = -324.0
+margin_top = -40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="Control2/HBoxContainer"]
+margin_right = 136.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control2/HBoxContainer/PanelContainer"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 128.0
+margin_bottom = 72.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coin" type="TextureRect" parent="Control2/HBoxContainer/PanelContainer/HBoxContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 22 )
+stretch_mode = 6
+
+[node name="CenterContainer" type="CenterContainer" parent="Control2/HBoxContainer/PanelContainer/HBoxContainer"]
+margin_left = 68.0
+margin_right = 120.0
+margin_bottom = 64.0
+
+[node name="Web" type="TextureRect" parent="Control2/HBoxContainer/PanelContainer/HBoxContainer/CenterContainer"]
+margin_top = 6.0
+margin_right = 52.0
+margin_bottom = 58.0
+texture = ExtResource( 24 )
+
+[node name="Bug" type="TextureRect" parent="Control2/HBoxContainer/PanelContainer/HBoxContainer/CenterContainer"]
+margin_left = 14.0
+margin_top = 20.0
+margin_right = 38.0
+margin_bottom = 44.0
+texture = ExtResource( 21 )
+stretch_mode = 6
+
+[node name="PanelContainer2" type="PanelContainer" parent="Control2/HBoxContainer"]
+margin_left = 140.0
+margin_right = 324.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control2/HBoxContainer/PanelContainer2"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 176.0
+margin_bottom = 72.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rock" type="TextureRect" parent="Control2/HBoxContainer/PanelContainer2/HBoxContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 20 )
+stretch_mode = 6
+
+[node name="Birb" type="TextureRect" parent="Control2/HBoxContainer/PanelContainer2/HBoxContainer"]
+margin_left = 68.0
+margin_right = 168.0
+margin_bottom = 64.0
+texture = ExtResource( 18 )
+stretch_mode = 6
+
+[node name="Avoid" type="Label" parent="Control2"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -203.0
+margin_top = -60.0
+margin_right = -145.0
+margin_bottom = -30.0
+text = "Avoid"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Collect" type="Label" parent="Control2"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -344.0
+margin_top = -60.0
+margin_right = -273.0
+margin_bottom = -30.0
+text = "Collect"
 __meta__ = {
 "_edit_use_anchors_": false
 }
