@@ -90,7 +90,12 @@ func _input(event: InputEvent):
 		if has_attacked:
 			animation_player.travel("walk_attack")
 			self.ammo = int(max(ammo - 1, 0))
-	elif can_attack && ammo <= 0 && !no_ammo_attack_sound.playing:
+	elif (
+		can_attack
+		&& event.is_action_pressed("attack")
+		&& ammo <= 0
+		&& !no_ammo_attack_sound.playing
+	):
 		no_ammo_attack_sound.play()
 
 
