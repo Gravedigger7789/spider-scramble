@@ -10,4 +10,6 @@ func _input(event: InputEvent) -> void:
 		|| event.is_action_pressed("pause")
 	):
 		get_tree().set_input_as_handled()
-		get_tree().change_scene_to(first_scene)
+		var changed = get_tree().change_scene_to(first_scene)
+		if changed != OK:
+			push_error("Could not change scene from Splash Screen")
