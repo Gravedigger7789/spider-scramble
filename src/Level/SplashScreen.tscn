@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/forest/forestback-1.png" type="Texture" id=1]
 [ext_resource path="res://assets/forest/forestback-2.png" type="Texture" id=2]
@@ -22,16 +22,9 @@
 [ext_resource path="res://assets/enemy/rock.png" type="Texture" id=20]
 [ext_resource path="res://assets/collect/fly.png" type="Texture" id=21]
 [ext_resource path="res://assets/collect/coin_center.png" type="Texture" id=22]
-[ext_resource path="res://assets/fonts/Cabin/Cabin-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=23]
 [ext_resource path="res://assets/collect/web.png" type="Texture" id=24]
 [ext_resource path="res://assets/mobile/button_jump.png" type="Texture" id=25]
 [ext_resource path="res://assets/mobile/button_shoot.png" type="Texture" id=26]
-
-[sub_resource type="DynamicFont" id=1]
-size = 42
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 23 )
 
 [node name="SplashScreen" type="Node"]
 script = ExtResource( 12 )
@@ -190,20 +183,11 @@ __meta__ = {
 
 [node name="Hints" type="Control" parent="."]
 modulate = Color( 1, 1, 1, 0.588235 )
+anchor_left = 0.02
 anchor_top = 0.725
-anchor_right = 1.0
+anchor_right = 0.98
 anchor_bottom = 1.0
 theme = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Hints"]
-visible = false
-margin_right = 232.0
-margin_bottom = 52.0
-custom_fonts/font = SubResource( 1 )
-text = "Click to Play !"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -247,9 +231,9 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Hints"]
-anchor_left = 0.975
+anchor_left = 1.0
 anchor_top = 0.5
-anchor_right = 0.975
+anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = -324.0
 margin_top = -40.0
@@ -334,9 +318,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -187.0
+margin_left = -171.0
 margin_top = -60.0
-margin_right = -129.0
+margin_right = -113.0
 margin_bottom = -30.0
 text = "Avoid"
 __meta__ = {
@@ -348,9 +332,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -328.0
+margin_left = -312.0
 margin_top = -60.0
-margin_right = -257.0
+margin_right = -241.0
 margin_bottom = -30.0
 text = "Collect"
 __meta__ = {
