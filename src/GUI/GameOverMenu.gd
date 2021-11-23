@@ -16,6 +16,7 @@ func _input(event: InputEvent) -> void:
 		event.is_action_pressed("attack")
 		or event.is_action_pressed("jump")
 		or event.is_action_pressed("pause")
+		or event is InputEventMouseButton
 	):
 		get_tree().set_input_as_handled()
 		hide()

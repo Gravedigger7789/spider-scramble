@@ -40,6 +40,7 @@ func spawn_random_sprite() -> void:
 		if floor_raycast.is_colliding()
 		else global_position
 	)
+	floor_position.x = get_viewport().size.x + sprite_size.x
 	sprite.global_position = floor_position
 
 

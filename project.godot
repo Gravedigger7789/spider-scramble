@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "ParallaxLayer",
+"class": "ExpandingParallaxLayer",
+"language": "GDScript",
+"path": "res://src/Level/ExpandingParallaxLayer.gd"
+}, {
 "base": "Sprite",
 "class": "MovingSprite",
 "language": "GDScript",
@@ -40,6 +45,7 @@ _global_script_classes=[ {
 "path": "res://src/Weapons/Weapon.gd"
 } ]
 _global_script_class_icons={
+"ExpandingParallaxLayer": "",
 "MovingSprite": "",
 "Obstacle": "",
 "Player": "",
@@ -64,7 +70,7 @@ window/size/width=640
 window/size/height=480
 window/dpi/allow_hidpi=true
 window/stretch/mode="viewport"
-window/stretch/aspect="keep"
+window/stretch/aspect="keep_height"
 
 [input]
 
