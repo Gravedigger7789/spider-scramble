@@ -65,12 +65,6 @@ centered = false
 [node name="TreeSpawner" parent="ParallaxBackground" instance=ExtResource( 9 )]
 position = Vector2( 832, 320 )
 
-[node name="FoliageSpawner" parent="ParallaxBackground" instance=ExtResource( 9 )]
-position = Vector2( 832, 24 )
-textures = [ ExtResource( 20 ), ExtResource( 19 ), ExtResource( 21 ), ExtResource( 22 ) ]
-min_spawn_time = 0.5
-max_spawn_time = 2.0
-
 [node name="ShrubSpawner" parent="ParallaxBackground" instance=ExtResource( 9 )]
 position = Vector2( 800, 320 )
 textures = [ ExtResource( 18 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 12 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 10 ) ]
@@ -121,6 +115,12 @@ motion_mirroring = Vector2( 640, 0 )
 [node name="Sprite" type="Sprite" parent="ParallaxForeground/TreeTops"]
 texture = ExtResource( 2 )
 centered = false
+
+[node name="FoliageSpawner" parent="ParallaxForeground" instance=ExtResource( 9 )]
+position = Vector2( 832, 24 )
+textures = [ ExtResource( 20 ), ExtResource( 19 ), ExtResource( 21 ), ExtResource( 22 ) ]
+min_spawn_time = 0.5
+max_spawn_time = 2.0
 
 [node name="Floor" type="StaticBody2D" parent="."]
 collision_layer = 4
