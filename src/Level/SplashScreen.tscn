@@ -157,7 +157,7 @@ position = Vector2( 368, 240 )
 pause = true
 
 [node name="Sprite" type="Sprite" parent="Foreground"]
-position = Vector2( 560, 312 )
+position = Vector2( 560, 316 )
 texture = ExtResource( 20 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Foreground"]
