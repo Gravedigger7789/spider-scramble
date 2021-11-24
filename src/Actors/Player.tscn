@@ -12,7 +12,7 @@
 [ext_resource path="res://sounds/action/shoot_no_ammo.wav" type="AudioStream" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 44, 26 )
+extents = Vector2( 44, 27 )
 
 [sub_resource type="Animation" id=2]
 length = 0.001
