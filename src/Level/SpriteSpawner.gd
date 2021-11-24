@@ -3,7 +3,6 @@ class_name SpriteSpawner
 
 var sprites: Array
 
-export var sprite_velocity: Vector2 = Vector2(-400, 0)
 export(Array, Texture) var textures: Array
 export(float, 0, 30) var min_spawn_time := 2.0
 export(float, 0, 30) var max_spawn_time := 4.0
@@ -20,7 +19,6 @@ func _ready() -> void:
 func create_sprite(texture: Texture) -> MovingSprite:
 	var sprite := MovingSprite.new()
 	sprite.texture = texture
-	sprite.velocity = sprite_velocity
 	return sprite
 
 

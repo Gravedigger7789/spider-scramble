@@ -27,6 +27,7 @@
 [ext_resource path="res://assets/mobile/button_shoot.png" type="Texture" id=26]
 
 [node name="SplashScreen" type="Node"]
+pause_mode = 2
 script = ExtResource( 12 )
 
 [node name="Background" type="Control" parent="."]
@@ -150,15 +151,15 @@ texture = ExtResource( 13 )
 
 [node name="Heart" parent="Foreground" instance=ExtResource( 16 )]
 position = Vector2( 504, 240 )
-speed = 0.0
+pause = true
 
 [node name="Coin" parent="Foreground" instance=ExtResource( 11 )]
 position = Vector2( 368, 240 )
-speed = 0.0
+pause = true
 
 [node name="Obstacle" parent="Foreground" instance=ExtResource( 17 )]
 position = Vector2( 560, 312 )
-speed = 0.0
+pause = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Foreground"]
 layer = 2

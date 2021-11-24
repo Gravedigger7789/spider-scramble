@@ -6,7 +6,7 @@ const MAX_HEALTH := 3
 
 var has_jumped := false
 
-export var velocity := Vector2(-400, 0)
+onready var velocity := Difficulty.velocity
 export(float, 0, 30) var min_jump_time := 0.25
 export(float, 0, 30) var max_jump_time := 0.75
 
@@ -15,7 +15,6 @@ onready var jump_timer: Timer = $JumpTimer
 onready var sprite: Sprite = $Sprite
 onready var animation_player: AnimationPlayer = $AnimationPlayer
 onready var size := Vector2(sprite.texture.get_width(), sprite.texture.get_height())
-onready var original_veloicty := velocity
 
 
 func _ready() -> void:
@@ -38,7 +37,7 @@ func jump() -> void:
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
 	velocity.y = min(TERMINAL_VELOCITY, velocity.y)
-	velocity.x = original_veloicty.x * Difficulty.speed_modifier
+	velocity.x = Difficulty.velocity.x
 	velocity = move_and_slide(velocity, Vector2.UP)
 	if velocity.y > 0:
 		animation_player.play("fall")
