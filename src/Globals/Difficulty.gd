@@ -1,7 +1,6 @@
 extends Node
 
-
-const ORIGINAL_VELOCITY := Vector2 (-400, 0)
+const ORIGINAL_VELOCITY := Vector2(-400, 0)
 
 var speed_modifier := 1.0
 var difficulty_increase_seconds := 5.0
@@ -10,8 +9,10 @@ var elapsed_time := 0.0
 
 onready var velocity := ORIGINAL_VELOCITY
 
+
 func reset() -> void:
 	speed_modifier = 1.0
+	velocity = ORIGINAL_VELOCITY
 
 
 func _process(delta: float) -> void:
