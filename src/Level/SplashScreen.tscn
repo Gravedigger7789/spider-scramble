@@ -243,7 +243,7 @@ __meta__ = {
 }
 
 [node name="PanelContainer" type="PanelContainer" parent="Hints/HBoxContainer"]
-margin_right = 136.0
+margin_right = 114.0
 margin_bottom = 80.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -252,21 +252,21 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="Hints/HBoxContainer/PanelContainer"]
 margin_left = 8.0
 margin_top = 8.0
-margin_right = 128.0
+margin_right = 106.0
 margin_bottom = 72.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Coin" type="TextureRect" parent="Hints/HBoxContainer/PanelContainer/HBoxContainer"]
-margin_right = 64.0
+margin_right = 42.0
 margin_bottom = 64.0
 texture = ExtResource( 22 )
 stretch_mode = 6
 
 [node name="CenterContainer" type="CenterContainer" parent="Hints/HBoxContainer/PanelContainer/HBoxContainer"]
-margin_left = 68.0
-margin_right = 120.0
+margin_left = 46.0
+margin_right = 98.0
 margin_bottom = 64.0
 
 [node name="Web" type="TextureRect" parent="Hints/HBoxContainer/PanelContainer/HBoxContainer/CenterContainer"]
@@ -276,16 +276,16 @@ margin_bottom = 58.0
 texture = ExtResource( 24 )
 
 [node name="Bug" type="TextureRect" parent="Hints/HBoxContainer/PanelContainer/HBoxContainer/CenterContainer"]
-margin_left = 14.0
-margin_top = 20.0
-margin_right = 38.0
-margin_bottom = 44.0
+margin_left = 16.0
+margin_top = 21.0
+margin_right = 36.0
+margin_bottom = 42.0
 texture = ExtResource( 21 )
 stretch_mode = 6
 
 [node name="PanelContainer2" type="PanelContainer" parent="Hints/HBoxContainer"]
-margin_left = 140.0
-margin_right = 324.0
+margin_left = 118.0
+margin_right = 288.0
 margin_bottom = 80.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -294,7 +294,7 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="Hints/HBoxContainer/PanelContainer2"]
 margin_left = 8.0
 margin_top = 8.0
-margin_right = 176.0
+margin_right = 162.0
 margin_bottom = 72.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -308,7 +308,7 @@ stretch_mode = 6
 
 [node name="Birb" type="TextureRect" parent="Hints/HBoxContainer/PanelContainer2/HBoxContainer"]
 margin_left = 68.0
-margin_right = 168.0
+margin_right = 154.0
 margin_bottom = 64.0
 texture = ExtResource( 18 )
 stretch_mode = 6
