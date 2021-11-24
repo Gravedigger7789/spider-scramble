@@ -4,8 +4,8 @@ class_name SpriteSpawner
 var sprites: Array
 
 export(Array, Texture) var textures: Array
-export(float, 0, 30) var min_spawn_time := 2.0
-export(float, 0, 30) var max_spawn_time := 4.0
+export(float, 0, 30) var min_spawn_time := 0.5
+export(float, 0, 30) var max_spawn_time := 2.0
 
 onready var spawn_timer: Timer = $SpawnTimer
 onready var floor_raycast: RayCast2D = $FloorCheck
@@ -23,7 +23,7 @@ func create_sprite(texture: Texture) -> MovingSprite:
 
 
 func randomize_spawn_time() -> void:
-	var random_spawn_time := rand_range(min_spawn_time, max_spawn_time)
+	var random_spawn_time := rand_range(min_spawn_time, max_spawn_time) * Difficulty.spawn_modifier
 	spawn_timer.start(random_spawn_time)
 
 

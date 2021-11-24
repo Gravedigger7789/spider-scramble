@@ -88,5 +88,13 @@ anims/RESET = SubResource( 3 )
 anims/fall = SubResource( 5 )
 anims/jump = SubResource( 4 )
 
+[node name="PlayerDetector" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( -400, 0 )
+
+[node name="ScreenDetector" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( -640, 0 )
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="JumpTimer" to="." method="_on_JumpTimer_timeout"]

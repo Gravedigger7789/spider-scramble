@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 func randomize_spawn_time() -> void:
-	var random_spawn_time = rand_range(min_spawn_time, max_spawn_time)
+	var random_spawn_time = rand_range(min_spawn_time, max_spawn_time) * Difficulty.spawn_modifier
 	spawn_timer.start(random_spawn_time)
 
 
