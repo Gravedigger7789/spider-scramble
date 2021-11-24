@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/enemy/bird_wings_down.png" type="Texture" id=1]
 [ext_resource path="res://src/Actors/Birb.gd" type="Script" id=2]
@@ -56,6 +56,9 @@ tracks/0/keys = {
 "values": [ ExtResource( 1 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 100, 64 )
+
 [node name="Birb" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 2 )
@@ -80,21 +83,17 @@ collision_layer = 4
 position = Vector2( 0, 6 )
 shape = SubResource( 2 )
 
-[node name="JumpTimer" type="Timer" parent="."]
-one_shot = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 3 )
 anims/fall = SubResource( 5 )
 anims/jump = SubResource( 4 )
 
-[node name="PlayerDetector" type="RayCast2D" parent="."]
-enabled = true
-cast_to = Vector2( -400, 0 )
+[node name="JumpDetector" type="Area2D" parent="."]
+collision_layer = 4
 
-[node name="ScreenDetector" type="RayCast2D" parent="."]
-enabled = true
-cast_to = Vector2( -640, 0 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JumpDetector"]
+position = Vector2( -100, -32 )
+shape = SubResource( 6 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="timeout" from="JumpTimer" to="." method="_on_JumpTimer_timeout"]
+[connection signal="body_entered" from="JumpDetector" to="." method="_on_JumpDetector_body_entered"]
