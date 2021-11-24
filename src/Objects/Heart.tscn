@@ -1,21 +1,34 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Objects/Obstacle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Objects/Heart.gd" type="Script" id=2]
 [ext_resource path="res://assets/collect/fly.png" type="Texture" id=3]
+[ext_resource path="res://assets/collect/web.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12, 12 )
+extents = Vector2( 24, 24 )
 
 [node name="Heart" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="Sprite" parent="." index="0"]
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+margin_left = -1.0
+margin_top = -240.0
+margin_right = 1.0
+color = Color( 0.886275, 0.886275, 0.886275, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite2" type="Sprite" parent="." index="1"]
+texture = ExtResource( 4 )
+
+[node name="Sprite" parent="." index="2"]
 texture = ExtResource( 3 )
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="3"]
 position = Vector2( 0, 0 )
 shape = SubResource( 1 )
 
-[node name="VisibilityNotifier2D" parent="." index="2"]
-rect = Rect2( -12, -12, 24, 24 )
+[node name="VisibilityNotifier2D" parent="." index="4"]
+rect = Rect2( -24, -24, 48, 48 )
