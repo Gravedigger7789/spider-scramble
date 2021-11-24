@@ -7,7 +7,7 @@
 extents = Vector2( 32, 28 )
 
 [node name="Obstacle" type="Area2D"]
-collision_layer = 4
+collision_layer = 2
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -22,6 +22,9 @@ shape = SubResource( 1 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 rect = Rect2( -32, -25, 64, 56 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = "Sound Effects"
 
 [connection signal="body_entered" from="." to="." method="_on_Obstacle_body_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

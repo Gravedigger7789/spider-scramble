@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/GUI/GameTheme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/fonts/Cabin/Cabin-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://src/GUI/GameOverMenu.gd" type="Script" id=3]
+[ext_resource path="res://sounds/action/player_die.wav" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -47,3 +48,6 @@ custom_fonts/font = SubResource( 1 )
 text = "Game Over
 Click to Restart !"
 align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )

@@ -1,11 +1,14 @@
 extends Control
 
+onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
 
 func _ready():
 	set_process_input(false)
 
 
 func show() -> void:
+	audio_stream_player.play()
 	get_tree().paused = true
 	set_process_input(true)
 	.show()

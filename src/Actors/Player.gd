@@ -25,6 +25,8 @@ onready var weapon: Weapon = $Weapon
 onready var animation_player: AnimationNodeStateMachinePlayback = $AnimationTree.get(
 	"parameters/playback"
 )
+onready var jump_sound: AudioStreamPlayer = $JumpSound
+onready var no_ammo_attack_sound: AudioStreamPlayer = $NoAmmoAttackSound
 
 
 func _ready() -> void:
@@ -66,7 +68,7 @@ func set_coins(value: int) -> void:
 
 
 func get_can_attack() -> bool:
-	return can_attack and ammo > 0
+	return can_attack && ammo > 0
 
 
 func _physics_process(delta: float) -> void:
@@ -74,9 +76,10 @@ func _physics_process(delta: float) -> void:
 	velocity.y = min(TERMINAL_VELOCITY, velocity.y)
 	velocity = move_and_slide(velocity, Vector2.UP)
 
-	if is_on_floor() and Input.is_action_just_pressed("jump"):
+	if is_on_floor() && Input.is_action_just_pressed("jump"):
 		velocity.y = -JUMP_SPEED
-	if Input.is_action_just_released("jump") and velocity.y < 0:
+		jump_sound.play()
+	if Input.is_action_just_released("jump") && velocity.y < 0:
 		velocity.y *= 0.6
 
 
@@ -87,6 +90,13 @@ func _input(event: InputEvent):
 		if has_attacked:
 			animation_player.travel("walk_attack")
 			self.ammo = int(max(ammo - 1, 0))
+	elif (
+		can_attack
+		&& event.is_action_pressed("attack")
+		&& ammo <= 0
+		&& !no_ammo_attack_sound.playing
+	):
+		no_ammo_attack_sound.play()
 
 
 func take_damage() -> void:

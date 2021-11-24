@@ -29,7 +29,7 @@ func randomize_jump_time() -> void:
 
 
 func jump() -> void:
-	if is_on_floor() and !has_jumped:
+	if is_on_floor() && !has_jumped:
 		animation_player.play("jump")
 		velocity.y = -JUMP_SPEED
 		has_jumped = true

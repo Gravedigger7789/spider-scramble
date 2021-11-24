@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/GUI/GameGUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
@@ -8,8 +8,11 @@
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Objects/Obstacle.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Objects/Heart.tscn" type="PackedScene" id=8]
+[ext_resource path="res://sounds/theme/theme.wav" type="AudioStream" id=9]
+[ext_resource path="res://src/Level/Game.gd" type="Script" id=10]
 
 [node name="Sandbox1" type="Node"]
+script = ExtResource( 10 )
 
 [node name="GameGUI" parent="." instance=ExtResource( 1 )]
 player_path = NodePath("../Player")
@@ -26,3 +29,11 @@ obstacles = [ ExtResource( 7 ), ExtResource( 5 ) ]
 [node name="PickupSpawner" parent="." instance=ExtResource( 3 )]
 position = Vector2( 768, 224 )
 obstacles = [ ExtResource( 6 ), ExtResource( 8 ) ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
+mix_target = 1
+bus = "Level"
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
