@@ -235,16 +235,16 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -324.0
-margin_top = -40.0
-margin_bottom = 40.0
+margin_left = -288.0
+margin_top = -37.0
+margin_bottom = 37.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PanelContainer" type="PanelContainer" parent="Hints/HBoxContainer"]
 margin_right = 114.0
-margin_bottom = 80.0
+margin_bottom = 74.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -253,40 +253,40 @@ __meta__ = {
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 106.0
-margin_bottom = 72.0
+margin_bottom = 66.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Coin" type="TextureRect" parent="Hints/HBoxContainer/PanelContainer/HBoxContainer"]
 margin_right = 42.0
-margin_bottom = 64.0
+margin_bottom = 58.0
 texture = ExtResource( 22 )
 stretch_mode = 6
 
 [node name="CenterContainer" type="CenterContainer" parent="Hints/HBoxContainer/PanelContainer/HBoxContainer"]
 margin_left = 46.0
 margin_right = 98.0
-margin_bottom = 64.0
+margin_bottom = 58.0
 
 [node name="Web" type="TextureRect" parent="Hints/HBoxContainer/PanelContainer/HBoxContainer/CenterContainer"]
-margin_top = 6.0
+margin_top = 3.0
 margin_right = 52.0
-margin_bottom = 58.0
+margin_bottom = 55.0
 texture = ExtResource( 24 )
 
 [node name="Bug" type="TextureRect" parent="Hints/HBoxContainer/PanelContainer/HBoxContainer/CenterContainer"]
 margin_left = 16.0
-margin_top = 21.0
+margin_top = 18.0
 margin_right = 36.0
-margin_bottom = 42.0
+margin_bottom = 39.0
 texture = ExtResource( 21 )
 stretch_mode = 6
 
 [node name="PanelContainer2" type="PanelContainer" parent="Hints/HBoxContainer"]
 margin_left = 118.0
 margin_right = 288.0
-margin_bottom = 80.0
+margin_bottom = 74.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -295,21 +295,21 @@ __meta__ = {
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 162.0
-margin_bottom = 72.0
+margin_bottom = 66.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Rock" type="TextureRect" parent="Hints/HBoxContainer/PanelContainer2/HBoxContainer"]
 margin_right = 64.0
-margin_bottom = 64.0
+margin_bottom = 58.0
 texture = ExtResource( 20 )
 stretch_mode = 6
 
 [node name="Birb" type="TextureRect" parent="Hints/HBoxContainer/PanelContainer2/HBoxContainer"]
 margin_left = 68.0
 margin_right = 154.0
-margin_bottom = 64.0
+margin_bottom = 58.0
 texture = ExtResource( 18 )
 stretch_mode = 6
 
@@ -318,10 +318,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -171.0
-margin_top = -60.0
-margin_right = -113.0
-margin_bottom = -30.0
+margin_left = -160.2
+margin_top = -57.0
+margin_right = -102.2
+margin_bottom = -27.0
 text = "Avoid"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -332,10 +332,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -312.0
-margin_top = -60.0
-margin_right = -241.0
-margin_bottom = -30.0
+margin_left = -279.2
+margin_top = -57.0
+margin_right = -208.2
+margin_bottom = -27.0
 text = "Collect"
 __meta__ = {
 "_edit_use_anchors_": false

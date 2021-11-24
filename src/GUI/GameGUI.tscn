@@ -36,8 +36,8 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
-margin_left = 37.0
-margin_right = 514.0
+margin_left = 43.0
+margin_right = 508.0
 margin_bottom = 46.0
 custom_constants/separation = 64
 __meta__ = {
@@ -45,7 +45,7 @@ __meta__ = {
 }
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer/HBoxContainer"]
-margin_right = 96.0
+margin_right = 84.0
 margin_bottom = 46.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -53,13 +53,13 @@ __meta__ = {
 
 [node name="HealthGUI" parent="CenterContainer/HBoxContainer/PanelContainer" instance=ExtResource( 1 )]
 margin_left = 8.0
-margin_top = 11.0
-margin_right = 88.0
-margin_bottom = 35.0
+margin_top = 12.0
+margin_right = 76.0
+margin_bottom = 33.0
 
 [node name="PanelContainer2" type="PanelContainer" parent="CenterContainer/HBoxContainer"]
-margin_left = 160.0
-margin_right = 317.0
+margin_left = 148.0
+margin_right = 305.0
 margin_bottom = 46.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -72,8 +72,8 @@ margin_right = 149.0
 margin_bottom = 29.0
 
 [node name="PanelContainer3" type="PanelContainer" parent="CenterContainer/HBoxContainer"]
-margin_left = 381.0
-margin_right = 477.0
+margin_left = 369.0
+margin_right = 465.0
 margin_bottom = 46.0
 __meta__ = {
 "_edit_use_anchors_": false

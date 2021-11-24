@@ -49,7 +49,6 @@ script = ExtResource( 2 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2( 0, 0 )
 shape = SubResource( 3 )
 
 [node name="VisibilityNotifier2D" parent="." index="2"]
