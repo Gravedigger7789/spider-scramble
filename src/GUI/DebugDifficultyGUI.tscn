@@ -13,21 +13,27 @@ __meta__ = {
 }
 
 [node name="DifficultyLevel" type="Label" parent="."]
-margin_right = 174.0
+margin_right = 222.0
 margin_bottom = 30.0
 text = "Level:"
 
-[node name="SpeedMultiplier" type="Label" parent="."]
+[node name="ElapsedTime" type="Label" parent="."]
 margin_top = 34.0
-margin_right = 174.0
+margin_right = 222.0
 margin_bottom = 64.0
+text = "Time Since Last Level:"
+
+[node name="SpeedMultiplier" type="Label" parent="."]
+margin_top = 68.0
+margin_right = 222.0
+margin_bottom = 98.0
 text = "Speed Multiplier:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SpawnMultiplier" type="Label" parent="."]
-margin_top = 68.0
-margin_right = 174.0
-margin_bottom = 98.0
+margin_top = 102.0
+margin_right = 222.0
+margin_bottom = 132.0
 text = "Spawn Multiplier:"
