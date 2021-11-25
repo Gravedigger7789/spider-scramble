@@ -4,10 +4,10 @@ extends Control
 enum buttons {X = 1, Y = 2, B = 4, A = 8}
 export (int, FLAGS, "X", "Y", "B", "A") var selected_buttons
 
-onready var y_button: Button = $YButton
-onready var x_button: Button = $XButton
-onready var b_button: Button = $BButton
-onready var a_button: Button = $AButton
+onready var y_button: Button = $CenterContainer/Buttons/YButton
+onready var x_button: Button = $CenterContainer/Buttons/XButton
+onready var b_button: Button = $CenterContainer/Buttons/BButton
+onready var a_button: Button = $CenterContainer/Buttons/AButton
 
 
 func _ready() -> void:

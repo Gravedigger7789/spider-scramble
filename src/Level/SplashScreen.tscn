@@ -222,7 +222,7 @@ align = 1
 
 [node name="ControllerButtons" parent="Hints/GridContainer" instance=ExtResource( 23 )]
 margin_left = 245.0
-margin_right = 245.0
+margin_right = 297.0
 margin_bottom = 64.0
 selected_buttons = 10
 
@@ -243,7 +243,7 @@ text = "Attack: Z, Click"
 [node name="ControllerButtons2" parent="Hints/GridContainer" instance=ExtResource( 23 )]
 margin_left = 245.0
 margin_top = 64.0
-margin_right = 245.0
+margin_right = 297.0
 margin_bottom = 128.0
 selected_buttons = 5
 
