@@ -16,9 +16,8 @@ onready var jump_detector_collision: CollisionShape2D = $JumpDetector/CollisionS
 
 
 func jump() -> void:
-	if is_on_floor():
-		animation_player.play("jump")
-		velocity.y = -JUMP_SPEED
+	animation_player.play("jump")
+	velocity.y = -JUMP_SPEED
 
 
 func _physics_process(delta: float) -> void:
