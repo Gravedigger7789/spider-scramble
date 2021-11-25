@@ -194,8 +194,12 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="Hints"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -64.0
+margin_right = 245.0
+margin_bottom = 64.0
+custom_constants/vseparation = 0
 custom_constants/hseparation = 8
 columns = 3
 __meta__ = {
@@ -223,24 +227,24 @@ margin_bottom = 64.0
 selected_buttons = 10
 
 [node name="TextureRect2" type="TextureRect" parent="Hints/GridContainer"]
-margin_top = 68.0
+margin_top = 64.0
 margin_right = 64.0
-margin_bottom = 132.0
+margin_bottom = 128.0
 texture = ExtResource( 26 )
 stretch_mode = 6
 
 [node name="Label2" type="Label" parent="Hints/GridContainer"]
 margin_left = 72.0
-margin_top = 85.0
+margin_top = 81.0
 margin_right = 237.0
-margin_bottom = 115.0
+margin_bottom = 111.0
 text = "Attack: Z, Click"
 
 [node name="ControllerButtons2" parent="Hints/GridContainer" instance=ExtResource( 23 )]
 margin_left = 245.0
-margin_top = 68.0
+margin_top = 64.0
 margin_right = 245.0
-margin_bottom = 132.0
+margin_bottom = 128.0
 selected_buttons = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Hints"]
