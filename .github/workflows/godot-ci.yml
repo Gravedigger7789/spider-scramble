@@ -12,8 +12,28 @@ jobs:
     container:
       image: barichello/godot-ci:${{ matrix.godot_version }}
     steps:
-      - uses: actions/checkout@v2
-      - uses: ./.github/actions/godot-export
+      - name: Checkout Code
+        uses: actions/checkout@v2
         with:
-          export_template: ${{ matrix.export_template }}
-          godot_version: ${{ matrix.godot_version }}
+          lfs: true
+      - name: Setup Export Templates
+        shell: bash
+        run: |
+          mkdir -v -p ~/.local/share/godot/templates
+          mv /root/.local/share/godot/templates/${{ matrix.godot_version }}.stable ~/.local/share/godot/templates/${{ matrix.godot_version }}.stable
+      - name: Build Project
+        shell: bash
+        run: |
+          mkdir -v -p "build"
+          godot -v --export "${{ matrix.export_template }}"
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ matrix.export_template }}
+          path: build/
+      - name: Publish to GitHub Pages
+        if: ${{ matrix.export_template }} == "HTML5"
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
