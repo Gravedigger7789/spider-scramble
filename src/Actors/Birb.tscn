@@ -8,11 +8,11 @@
 
 [sub_resource type="RectangleShape2D" id=12]
 resource_local_to_scene = true
-extents = Vector2( 24, 24 )
+extents = Vector2( 24, 26 )
 
 [sub_resource type="RectangleShape2D" id=13]
 resource_local_to_scene = true
-extents = Vector2( 30, 28 )
+extents = Vector2( 30, 30 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 100, 64 )
