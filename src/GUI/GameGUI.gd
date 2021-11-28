@@ -2,6 +2,7 @@ extends Control
 class_name GameGUI
 
 export(NodePath) var player_path
+
 onready var player: Player = get_node(player_path)
 onready var health_gui = $CenterContainer/HBoxContainer/PanelContainer/HealthGUI
 onready var ammo_gui = $CenterContainer/HBoxContainer/PanelContainer2/AmmoGUI
@@ -11,7 +12,7 @@ onready var game_over_menu = $CanvasLayer/GameOverMenu
 
 
 func _ready() -> void:
-	var connected = player.connect(
+	var connected := player.connect(
 		"max_health_changed", health_gui, "_on_Player_max_health_changed"
 	)
 	if connected != OK:
@@ -41,3 +42,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_Player_health_depleted() -> void:
 	game_over_menu.show()
+
+
+func _process(_delta: float) -> void:
+	game_over_menu.time = score_gui.time
+	game_over_menu.score = score_gui.adjusted_score

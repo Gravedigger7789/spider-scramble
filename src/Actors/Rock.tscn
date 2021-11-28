@@ -6,11 +6,11 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
-extents = Vector2( 28, 26 )
+extents = Vector2( 26, 26 )
 
 [sub_resource type="RectangleShape2D" id=2]
 resource_local_to_scene = true
-extents = Vector2( 32, 30 )
+extents = Vector2( 32, 32 )
 
 [node name="Rock" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
@@ -19,12 +19,8 @@ script = ExtResource( 3 )
 texture = ExtResource( 2 )
 
 [node name="FloorCollision" parent="." index="1"]
-position = Vector2( 0, 6 )
 shape = SubResource( 1 )
 
-[node name="VisibilityNotifier2D" parent="." index="2"]
-rect = Rect2( -32, -28, 64, 64 )
-
 [node name="CollisionShape2D" parent="ImpactCollision" index="0"]
-position = Vector2( 0, 4 )
+position = Vector2( 0, 0 )
 shape = SubResource( 2 )

@@ -1,14 +1,8 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://assets/forest/forestback-1.png" type="Texture" id=1]
-[ext_resource path="res://assets/forest/forestback-2.png" type="Texture" id=2]
-[ext_resource path="res://assets/forest/forestback-3.png" type="Texture" id=3]
+[ext_resource path="res://src/Level/StaticTreeBackground.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/fonts/Cabin/Cabin-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/forest/treetop.png" type="Texture" id=4]
-[ext_resource path="res://assets/splash/splash_tree.png" type="Texture" id=5]
-[ext_resource path="res://assets/forest/floor-1.png" type="Texture" id=6]
-[ext_resource path="res://assets/forest/floor-3.png" type="Texture" id=7]
-[ext_resource path="res://assets/forest/floor-2.png" type="Texture" id=8]
-[ext_resource path="res://assets/splash/splash_bush.png" type="Texture" id=9]
 [ext_resource path="res://assets/splash/splash_foliage.png" type="Texture" id=10]
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/Level/SplashScreen.gd" type="Script" id=12]
@@ -21,122 +15,22 @@
 [ext_resource path="res://assets/enemy/rock.png" type="Texture" id=20]
 [ext_resource path="res://assets/collect/fly.png" type="Texture" id=21]
 [ext_resource path="res://assets/collect/coin_center.png" type="Texture" id=22]
+[ext_resource path="res://src/GUI/ControllerButtons.tscn" type="PackedScene" id=23]
 [ext_resource path="res://assets/collect/web.png" type="Texture" id=24]
 [ext_resource path="res://assets/mobile/button_jump.png" type="Texture" id=25]
 [ext_resource path="res://assets/mobile/button_shoot.png" type="Texture" id=26]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
 
 [node name="SplashScreen" type="Node"]
 pause_mode = 2
 script = ExtResource( 12 )
 
-[node name="Background" type="Control" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-theme = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BackgroundColor" type="TextureRect" parent="Background"]
-anchor_right = 1.0
-margin_bottom = 340.0
-mouse_filter = 2
-texture = ExtResource( 1 )
-stretch_mode = 2
-
-[node name="BackgroundTrees" type="TextureRect" parent="Background"]
-anchor_right = 1.0
-margin_bottom = 340.0
-mouse_filter = 2
-texture = ExtResource( 2 )
-stretch_mode = 2
-
-[node name="MidgroundTrees" type="TextureRect" parent="Background"]
-anchor_right = 1.0
-margin_bottom = 340.0
-mouse_filter = 2
-texture = ExtResource( 3 )
-stretch_mode = 2
-
-[node name="ForegroundTree" type="TextureRect" parent="Background"]
-anchor_right = 1.0
-margin_bottom = 480.0
-mouse_filter = 2
-texture = ExtResource( 5 )
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ForegroundBushes" type="TextureRect" parent="Background"]
-anchor_right = 1.0
-margin_bottom = 155.0
-mouse_filter = 2
-texture = ExtResource( 9 )
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Foreground" type="CanvasLayer" parent="Background"]
-
-[node name="ForegroundTreeTop" type="TextureRect" parent="Background/Foreground"]
-anchor_right = 1.0
-margin_bottom = 155.0
-mouse_filter = 2
-texture = ExtResource( 4 )
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ForegroundTreeTopFoliage" type="TextureRect" parent="Background/Foreground"]
-anchor_right = 1.0
-margin_bottom = 480.0
-mouse_filter = 2
-texture = ExtResource( 10 )
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Background"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -144.0
-mouse_filter = 2
-custom_constants/separation = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Grass" type="TextureRect" parent="Background/VBoxContainer"]
-margin_right = 640.0
-margin_bottom = 64.0
-mouse_filter = 2
-texture = ExtResource( 6 )
-stretch_mode = 2
-
-[node name="Dirt" type="TextureRect" parent="Background/VBoxContainer"]
-margin_top = 64.0
-margin_right = 640.0
-margin_bottom = 128.0
-mouse_filter = 2
-texture = ExtResource( 8 )
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Dirt2" type="TextureRect" parent="Background/VBoxContainer"]
-margin_top = 128.0
-margin_right = 640.0
-margin_bottom = 192.0
-mouse_filter = 2
-texture = ExtResource( 7 )
-stretch_mode = 2
+[node name="Background" parent="." instance=ExtResource( 1 )]
 
 [node name="Foreground" type="Node" parent="."]
 
@@ -157,11 +51,31 @@ position = Vector2( 368, 240 )
 pause = true
 
 [node name="Sprite" type="Sprite" parent="Foreground"]
-position = Vector2( 560, 312 )
+position = Vector2( 560, 316 )
 texture = ExtResource( 20 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Foreground"]
 layer = 2
+
+[node name="ForegroundTreeTop" type="TextureRect" parent="Foreground/CanvasLayer"]
+anchor_right = 1.0
+margin_bottom = 155.0
+mouse_filter = 2
+texture = ExtResource( 4 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ForegroundTreeTopFoliage" type="TextureRect" parent="Foreground/CanvasLayer"]
+anchor_right = 1.0
+margin_bottom = 480.0
+mouse_filter = 2
+texture = ExtResource( 10 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Birb" type="Sprite" parent="Foreground/CanvasLayer"]
 position = Vector2( 504, 96 )
@@ -193,9 +107,14 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="Hints"]
-margin_right = 40.0
-margin_bottom = 40.0
-columns = 2
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -64.0
+margin_right = 245.0
+margin_bottom = 64.0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 8
+columns = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -203,48 +122,61 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="Hints/GridContainer"]
 margin_right = 64.0
 margin_bottom = 64.0
-rect_clip_content = true
 texture = ExtResource( 25 )
 stretch_mode = 6
 
 [node name="Label" type="Label" parent="Hints/GridContainer"]
-margin_left = 68.0
+margin_left = 72.0
 margin_top = 17.0
-margin_right = 282.0
+margin_right = 237.0
 margin_bottom = 47.0
-text = "Jump: Space, Up, A, Y"
+custom_fonts/font = SubResource( 1 )
+text = "Jump: Space, Up"
+align = 1
+
+[node name="ControllerButtons" parent="Hints/GridContainer" instance=ExtResource( 23 )]
+margin_left = 245.0
+margin_right = 297.0
+margin_bottom = 64.0
+selected_buttons = 10
 
 [node name="TextureRect2" type="TextureRect" parent="Hints/GridContainer"]
-margin_top = 68.0
+margin_top = 64.0
 margin_right = 64.0
-margin_bottom = 132.0
+margin_bottom = 128.0
 texture = ExtResource( 26 )
+stretch_mode = 6
 
 [node name="Label2" type="Label" parent="Hints/GridContainer"]
-margin_left = 68.0
-margin_top = 85.0
-margin_right = 282.0
-margin_bottom = 115.0
-text = "Attack: Z, Click, X, B"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_left = 72.0
+margin_top = 81.0
+margin_right = 237.0
+margin_bottom = 111.0
+custom_fonts/font = SubResource( 1 )
+text = "Attack: Z, Click"
+
+[node name="ControllerButtons2" parent="Hints/GridContainer" instance=ExtResource( 23 )]
+margin_left = 245.0
+margin_top = 64.0
+margin_right = 297.0
+margin_bottom = 128.0
+selected_buttons = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Hints"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -324.0
-margin_top = -40.0
-margin_bottom = 40.0
+margin_left = -288.0
+margin_top = -37.0
+margin_bottom = 37.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PanelContainer" type="PanelContainer" parent="Hints/HBoxContainer"]
-margin_right = 136.0
-margin_bottom = 80.0
+margin_right = 114.0
+margin_bottom = 74.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -252,41 +184,41 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="Hints/HBoxContainer/PanelContainer"]
 margin_left = 8.0
 margin_top = 8.0
-margin_right = 128.0
-margin_bottom = 72.0
+margin_right = 106.0
+margin_bottom = 66.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Coin" type="TextureRect" parent="Hints/HBoxContainer/PanelContainer/HBoxContainer"]
-margin_right = 64.0
-margin_bottom = 64.0
+margin_right = 42.0
+margin_bottom = 58.0
 texture = ExtResource( 22 )
 stretch_mode = 6
 
 [node name="CenterContainer" type="CenterContainer" parent="Hints/HBoxContainer/PanelContainer/HBoxContainer"]
-margin_left = 68.0
-margin_right = 120.0
-margin_bottom = 64.0
+margin_left = 46.0
+margin_right = 98.0
+margin_bottom = 58.0
 
 [node name="Web" type="TextureRect" parent="Hints/HBoxContainer/PanelContainer/HBoxContainer/CenterContainer"]
-margin_top = 6.0
+margin_top = 3.0
 margin_right = 52.0
-margin_bottom = 58.0
+margin_bottom = 55.0
 texture = ExtResource( 24 )
 
 [node name="Bug" type="TextureRect" parent="Hints/HBoxContainer/PanelContainer/HBoxContainer/CenterContainer"]
-margin_left = 14.0
-margin_top = 20.0
-margin_right = 38.0
-margin_bottom = 44.0
+margin_left = 16.0
+margin_top = 18.0
+margin_right = 36.0
+margin_bottom = 39.0
 texture = ExtResource( 21 )
 stretch_mode = 6
 
 [node name="PanelContainer2" type="PanelContainer" parent="Hints/HBoxContainer"]
-margin_left = 140.0
-margin_right = 324.0
-margin_bottom = 80.0
+margin_left = 118.0
+margin_right = 288.0
+margin_bottom = 74.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -294,22 +226,22 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="Hints/HBoxContainer/PanelContainer2"]
 margin_left = 8.0
 margin_top = 8.0
-margin_right = 176.0
-margin_bottom = 72.0
+margin_right = 162.0
+margin_bottom = 66.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Rock" type="TextureRect" parent="Hints/HBoxContainer/PanelContainer2/HBoxContainer"]
 margin_right = 64.0
-margin_bottom = 64.0
+margin_bottom = 58.0
 texture = ExtResource( 20 )
 stretch_mode = 6
 
 [node name="Birb" type="TextureRect" parent="Hints/HBoxContainer/PanelContainer2/HBoxContainer"]
 margin_left = 68.0
-margin_right = 168.0
-margin_bottom = 64.0
+margin_right = 154.0
+margin_bottom = 58.0
 texture = ExtResource( 18 )
 stretch_mode = 6
 
@@ -318,10 +250,11 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -171.0
-margin_top = -60.0
-margin_right = -113.0
-margin_bottom = -30.0
+margin_left = -160.2
+margin_top = -57.0
+margin_right = -102.2
+margin_bottom = -27.0
+custom_fonts/font = SubResource( 1 )
 text = "Avoid"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -332,10 +265,11 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -312.0
-margin_top = -60.0
-margin_right = -241.0
-margin_bottom = -30.0
+margin_left = -279.2
+margin_top = -57.0
+margin_right = -208.2
+margin_bottom = -27.0
+custom_fonts/font = SubResource( 1 )
 text = "Collect"
 __meta__ = {
 "_edit_use_anchors_": false
