@@ -26,5 +26,5 @@ func hit() -> void:
 	hit_sound.play()
 
 
-func _on_VisibilityNotifier2D_viewport_exited(viewport):
+func _on_VisibilityNotifier2D_viewport_exited(_viewport: Viewport) -> void:
 	queue_free()
