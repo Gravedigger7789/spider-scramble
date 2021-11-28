@@ -1,4 +1,4 @@
-name: "Godot Build and Upload"
+name: "Godot CI"
 on:
   workflow_dispatch:
   push:
@@ -12,7 +12,7 @@ jobs:
       matrix:
         export_template: ["Windows Desktop", "HTML5"]
         godot_version: [3.4]
-    name: Windows Export
+    name: Export
     runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:${{ matrix.godot_version }}
