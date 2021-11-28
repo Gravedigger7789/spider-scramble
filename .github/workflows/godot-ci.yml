@@ -2,7 +2,7 @@ name: "Godot CI"
 on:
   workflow_dispatch:
   push:
-    # branches: [main]
+    branches: [main]
 
 concurrency: ci-${{ github.ref }}
 
