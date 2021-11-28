@@ -1,6 +1,5 @@
 extends VBoxContainer
 
-
 const LEVEL_TEXT = "Level: %-5.0f"
 const SPEED_TEXT = "Speed Multiplier: %-5.2f"
 const SPAWN_TEXT = "Spawn Multiplier: %-5.2f"
