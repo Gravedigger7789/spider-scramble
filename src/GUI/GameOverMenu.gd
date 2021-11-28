@@ -7,6 +7,7 @@ onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 onready var time_value: Label = $Background/ColorRect/CenterContainer/VBoxContainer/TimeContainer/PanelContainer/TimeValue
 onready var score_value: Label = $Background/ColorRect/CenterContainer/VBoxContainer/ScoreContainer/PanelContainer/ScoreValue
 
+
 func _ready():
 	set_process_input(false)
 
