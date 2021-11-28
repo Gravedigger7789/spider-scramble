@@ -1,7 +1,7 @@
-extends Obstacle
+extends Pickup
 
 
-func _on_Obstacle_body_entered(body: Node) -> void:
+func contact_body(body: Node) -> void:
 	if body is Player:
 		body.heal(1)
-		play_contact_sound()
+	.contact_body(body)

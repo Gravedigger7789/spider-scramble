@@ -1,7 +1,7 @@
 extends Area2D
-class_name Obstacle
+class_name Pickup
 
-# Hack to use obstacle object on splash screen without it moving
+# Hack to use pickup object on splash screen without it moving
 export var pause := false
 
 onready var sprite: Sprite = $Sprite
@@ -18,14 +18,17 @@ func _physics_process(delta: float) -> void:
 	position += Difficulty.velocity * delta
 
 
-func _on_Obstacle_body_entered(body: Node) -> void:
-	if body is Player:
-		body.take_damage()
-		play_contact_sound()
+func _on_Pickup_body_entered(body: Node) -> void:
+	contact_body(body)
 
 
 func _on_VisibilityNotifier2D_screen_exited() -> void:
 	queue_free()
+
+
+func contact_body(body: Node) -> void:
+	if body is Player:
+		play_contact_sound()
 
 
 func play_contact_sound() -> void:
