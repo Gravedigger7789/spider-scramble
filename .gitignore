@@ -4,8 +4,7 @@
 logs/
 
 # Godot compiled binaries
-dist/
-html/
+build/
 
 # Mono-specific ignores
 .mono/

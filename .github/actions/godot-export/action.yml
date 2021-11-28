@@ -6,10 +6,6 @@ inputs:
     description: "Godot Version"
     required: true
     default: 3.4
-  project_name:
-    description: "Name of the project"
-    required: true
-    default: ${{ github.event.repository.name }}
   export_template:
     description: "Name of the export template to build"
     required: true
@@ -25,10 +21,10 @@ runs:
     - name: Build
       shell: bash
       run: |
-        mkdir -v -p "build/${{ inputs.export_template }}"
-        godot -v --export "${{ inputs.export_template }}" "../build/${{ inputs.export_template }}/${{ inputs.project_name }}.exe"
+        mkdir -v -p "build"
+        godot -v --export "${{ inputs.export_template }}"
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
         name: ${{ inputs.export_template }}
-        path: build/${{ inputs.export_template }}
+        path: build/
