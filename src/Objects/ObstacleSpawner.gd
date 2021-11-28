@@ -1,8 +1,11 @@
 extends Position2D
 
+export(NodePath) var game_gui_path := "../GameGUI"
 export(Array, PackedScene) var obstacles: Array
 export(float, 0, 30) var min_spawn_time := 2.0
 export(float, 0, 30) var max_spawn_time := 4.0
+
+onready var game_gui: GameGUI = get_node(game_gui_path)
 onready var spawn_timer: Timer = $SpawnTimer
 onready var floor_raycast: RayCast2D = $FloorCheck
 
@@ -28,6 +31,10 @@ func spawn_random_obstacle() -> void:
 	)
 	floor_position.x = get_viewport().size.x
 	obstacle.global_position = floor_position
+	if obstacle is Enemy:
+		var connected = obstacle.connect("defeated", game_gui.score_gui, "_on_Enemy_defeated")
+		if connected != OK:
+			push_warning("Could not connect enemy defeated")
 
 
 func _on_SpawnTimer_timeout() -> void:

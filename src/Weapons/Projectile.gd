@@ -12,12 +12,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_Projectile_body_entered(body: Node) -> void:
 	hit()
-	body.queue_free()
-
-
-func _on_Projectile_area_entered(area: Area2D) -> void:
-	hit()
-	area.queue_free()
+	if body.has_method("damage"):
+		body.damage()
 
 
 func _on_Expiration_timeout():
