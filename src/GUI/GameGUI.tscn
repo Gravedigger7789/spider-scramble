@@ -91,6 +91,7 @@ layer = 100
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource( 4 )]
 
 [node name="GameOverMenu" parent="CanvasLayer" instance=ExtResource( 8 )]
+visible = false
 
 [node name="MobileButtons" type="CanvasLayer" parent="."]
 layer = 101

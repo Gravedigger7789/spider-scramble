@@ -41,3 +41,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_Player_health_depleted() -> void:
 	game_over_menu.show()
+
+
+func _process(_delta: float) -> void:
+	game_over_menu.time = score_gui.time
+	game_over_menu.score = score_gui.adjusted_score

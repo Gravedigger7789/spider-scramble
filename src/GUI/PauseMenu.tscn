@@ -1,16 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/GUI/GameTheme.tres" type="Theme" id=1]
-[ext_resource path="res://assets/fonts/Cabin/Cabin-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/GUI/GameFont-Large.tres" type="DynamicFont" id=2]
 [ext_resource path="res://src/GUI/PauseMenu.gd" type="Script" id=3]
 [ext_resource path="res://sounds/menu/pause.wav" type="AudioStream" id=4]
 [ext_resource path="res://sounds/menu/resume.wav" type="AudioStream" id=5]
-
-[sub_resource type="DynamicFont" id=1]
-size = 64
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
 
 [node name="PauseMenu" type="Control"]
 pause_mode = 2
@@ -38,32 +32,32 @@ anchor_bottom = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer"]
 margin_left = 223.0
-margin_top = 159.0
+margin_top = 150.0
 margin_right = 417.0
-margin_bottom = 321.0
+margin_bottom = 330.0
 custom_constants/separation = 6
 
 [node name="Label" type="Label" parent="ColorRect/CenterContainer/VBoxContainer"]
 margin_right = 194.0
 margin_bottom = 78.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "PAUSE"
 align = 1
 
 [node name="ContinueButton" type="Button" parent="ColorRect/CenterContainer/VBoxContainer"]
-margin_left = 37.0
+margin_left = 28.0
 margin_top = 84.0
-margin_right = 157.0
-margin_bottom = 120.0
+margin_right = 165.0
+margin_bottom = 129.0
 rect_min_size = Vector2( 120, 0 )
 size_flags_horizontal = 4
 text = "Continue"
 
 [node name="QuitButton" type="Button" parent="ColorRect/CenterContainer/VBoxContainer"]
 margin_left = 37.0
-margin_top = 126.0
+margin_top = 135.0
 margin_right = 157.0
-margin_bottom = 162.0
+margin_bottom = 180.0
 rect_min_size = Vector2( 120, 0 )
 size_flags_horizontal = 4
 text = "Quit"
