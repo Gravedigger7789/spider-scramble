@@ -41,11 +41,11 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Background/ColorRect/CenterContainer"]
 margin_left = 165.0
-margin_top = 79.0
+margin_top = 50.0
 margin_right = 475.0
-margin_bottom = 281.0
+margin_bottom = 309.0
 theme = ExtResource( 1 )
-custom_constants/separation = 6
+custom_constants/separation = 8
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -58,9 +58,9 @@ text = "Game Over"
 align = 1
 
 [node name="TimeContainer" type="HBoxContainer" parent="Background/ColorRect/CenterContainer/VBoxContainer"]
-margin_top = 84.0
+margin_top = 86.0
 margin_right = 310.0
-margin_bottom = 140.0
+margin_bottom = 142.0
 custom_constants/separation = 32
 alignment = 1
 
@@ -87,9 +87,9 @@ text = "60"
 align = 1
 
 [node name="ScoreContainer" type="HBoxContainer" parent="Background/ColorRect/CenterContainer/VBoxContainer"]
-margin_top = 146.0
+margin_top = 150.0
 margin_right = 310.0
-margin_bottom = 202.0
+margin_bottom = 206.0
 custom_constants/separation = 32
 alignment = 1
 
@@ -115,5 +115,19 @@ rect_min_size = Vector2( 80, 40 )
 text = "100"
 align = 1
 
+[node name="ContinueButton" type="Button" parent="Background/ColorRect/CenterContainer/VBoxContainer"]
+margin_left = 75.0
+margin_top = 214.0
+margin_right = 235.0
+margin_bottom = 259.0
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 4
+text = "Play Again!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+
+[connection signal="pressed" from="Background/ColorRect/CenterContainer/VBoxContainer/ContinueButton" to="." method="_on_ContinueButton_pressed"]
