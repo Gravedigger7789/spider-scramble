@@ -18,10 +18,12 @@ runs:
   using: "composite"
   steps:
     - name: Setup Export Templates
+      shell: bash
       run: |
         mkdir -v -p ~/.local/share/godot/templates
         mv /root/.local/share/godot/templates/${{ inputs.godot_version }}.stable ~/.local/share/godot/templates/${{ inputs.godot_version }}.stable
     - name: Build
+      shell: bash
       run: |
         mkdir -v -p "build/${{ inputs.export_template }}"
         godot -v --export "${{ inputs.export_template }}" "../build/${{ inputs.export_template }}/${{ inputs.project_name }}.exe"
