@@ -1,8 +1,6 @@
 extends Sprite
 class_name MovingSprite
 
-export var velocity: Vector2 = Vector2(-400, 0)
-
 onready var size := Vector2(texture.get_width(), texture.get_height())
 
 
@@ -16,4 +14,4 @@ func _ready():
 
 
 func _physics_process(delta: float) -> void:
-	position += velocity * delta * Difficulty.speed_modifier
+	position += Difficulty.velocity * delta

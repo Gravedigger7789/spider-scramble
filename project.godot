@@ -9,10 +9,20 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://src/Actors/Enemy.gd"
+}, {
 "base": "ParallaxLayer",
 "class": "ExpandingParallaxLayer",
 "language": "GDScript",
 "path": "res://src/Level/ExpandingParallaxLayer.gd"
+}, {
+"base": "Control",
+"class": "GameGUI",
+"language": "GDScript",
+"path": "res://src/GUI/GameGUI.gd"
 }, {
 "base": "Sprite",
 "class": "MovingSprite",
@@ -20,9 +30,9 @@ _global_script_classes=[ {
 "path": "res://src/Level/MovingSprite.gd"
 }, {
 "base": "Area2D",
-"class": "Obstacle",
+"class": "Pickup",
 "language": "GDScript",
-"path": "res://src/Objects/Obstacle.gd"
+"path": "res://src/Objects/Pickup.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
@@ -45,9 +55,11 @@ _global_script_classes=[ {
 "path": "res://src/Weapons/Weapon.gd"
 } ]
 _global_script_class_icons={
+"Enemy": "",
 "ExpandingParallaxLayer": "",
+"GameGUI": "",
 "MovingSprite": "",
-"Obstacle": "",
+"Pickup": "",
 "Player": "",
 "Projectile": "",
 "SpriteSpawner": "",

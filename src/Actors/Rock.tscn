@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/enemy/rock.png" type="Texture" id=2]
+[ext_resource path="res://src/Actors/Rock.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
+extents = Vector2( 28, 26 )
+
+[sub_resource type="RectangleShape2D" id=2]
+resource_local_to_scene = true
+extents = Vector2( 32, 30 )
+
+[node name="Rock" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="FloorCollision" parent="." index="1"]
+position = Vector2( 0, 6 )
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" parent="." index="2"]
+rect = Rect2( -32, -28, 64, 64 )
+
+[node name="CollisionShape2D" parent="ImpactCollision" index="0"]
+position = Vector2( 0, 4 )
+shape = SubResource( 2 )

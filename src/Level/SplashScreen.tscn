@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/forest/forestback-1.png" type="Texture" id=1]
 [ext_resource path="res://assets/forest/forestback-2.png" type="Texture" id=2]
@@ -16,7 +16,6 @@
 [ext_resource path="res://src/GUI/GameTheme.tres" type="Theme" id=14]
 [ext_resource path="res://assets/player/spider_idle_mouth_open.png" type="Texture" id=15]
 [ext_resource path="res://src/Objects/Heart.tscn" type="PackedScene" id=16]
-[ext_resource path="res://src/Objects/Obstacle.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/enemy/bird_wings_neutral.png" type="Texture" id=18]
 [ext_resource path="res://src/GUI/SplashScreenFont.tres" type="DynamicFont" id=19]
 [ext_resource path="res://assets/enemy/rock.png" type="Texture" id=20]
@@ -27,6 +26,7 @@
 [ext_resource path="res://assets/mobile/button_shoot.png" type="Texture" id=26]
 
 [node name="SplashScreen" type="Node"]
+pause_mode = 2
 script = ExtResource( 12 )
 
 [node name="Background" type="Control" parent="."]
@@ -150,15 +150,15 @@ texture = ExtResource( 13 )
 
 [node name="Heart" parent="Foreground" instance=ExtResource( 16 )]
 position = Vector2( 504, 240 )
-speed = 0.0
+pause = true
 
 [node name="Coin" parent="Foreground" instance=ExtResource( 11 )]
 position = Vector2( 368, 240 )
-speed = 0.0
+pause = true
 
-[node name="Obstacle" parent="Foreground" instance=ExtResource( 17 )]
+[node name="Sprite" type="Sprite" parent="Foreground"]
 position = Vector2( 560, 312 )
-speed = 0.0
+texture = ExtResource( 20 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Foreground"]
 layer = 2

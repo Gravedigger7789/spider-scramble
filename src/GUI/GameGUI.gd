@@ -1,4 +1,5 @@
 extends Control
+class_name GameGUI
 
 export(NodePath) var player_path
 onready var player: Player = get_node(player_path)
