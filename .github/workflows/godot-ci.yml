@@ -1,5 +1,8 @@
-name: "godot-ci export"
-on: [push, workflow_dispatch]
+name: "Godot Build and Upload"
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
 
 jobs:
   export-godot:
