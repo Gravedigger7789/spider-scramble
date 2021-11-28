@@ -340,6 +340,3 @@ text = "Collect"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[connection signal="body_entered" from="Foreground/Heart" to="Foreground/Heart" method="_on_Obstacle_body_entered"]
-[connection signal="body_entered" from="Foreground/Coin" to="Foreground/Coin" method="_on_Obstacle_body_entered"]
