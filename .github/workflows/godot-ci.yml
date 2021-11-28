@@ -17,12 +17,10 @@ jobs:
         with:
           lfs: true
       - name: Setup Export Templates
-        shell: bash
         run: |
           mkdir -v -p ~/.local/share/godot/templates
           mv /root/.local/share/godot/templates/${{ matrix.godot_version }}.stable ~/.local/share/godot/templates/${{ matrix.godot_version }}.stable
       - name: Build Project
-        shell: bash
         run: |
           mkdir -v -p "build"
           godot -v --export "${{ matrix.export_template }}"
@@ -32,7 +30,7 @@ jobs:
           name: ${{ matrix.export_template }}
           path: build/
       - name: Publish to GitHub Pages
-        if: ${{ matrix.export_template }} == "HTML5"
+        if: matrix.export_template == 'HTML5'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
