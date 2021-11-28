@@ -98,7 +98,7 @@ layer = 101
 
 [node name="JumpButton" type="TouchScreenButton" parent="MobileButtons"]
 modulate = Color( 1, 1, 1, 0.588235 )
-position = Vector2( 32, 352 )
+position = Vector2( 40, 352 )
 scale = Vector2( 2, 2 )
 normal = ExtResource( 11 )
 pressed = ExtResource( 12 )
@@ -115,7 +115,7 @@ __meta__ = {
 
 [node name="AttackButton" type="TouchScreenButton" parent="MobileButtons/RightAlignment"]
 modulate = Color( 1, 1, 1, 0.588235 )
-position = Vector2( -160, 352 )
+position = Vector2( -168, 352 )
 scale = Vector2( 2, 2 )
 normal = ExtResource( 9 )
 pressed = ExtResource( 13 )
