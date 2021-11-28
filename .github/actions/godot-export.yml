@@ -1,0 +1,32 @@
+name: "Build and upload package"
+description: "Builds and uploads a Godot package to the archive"
+
+inputs:
+  godot_version:
+    description: "Godot Version"
+    required: true
+    default: 3.4
+  project_name:
+    description: "Name of the project"
+    required: true
+    default: ${{ github.event.repository.name }}
+  export_template:
+    description: "Name of the export template to build"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Export Templates
+      run: |
+        mkdir -v -p ~/.local/share/godot/templates
+        mv /root/.local/share/godot/templates/${{ inputs.godot_version }}.stable ~/.local/share/godot/templates/${{ inputs.godot_version }}.stable
+    - name: Build
+      run: |
+        mkdir -v -p "build/${{ inputs.export_template }}"
+        godot -v --export "${{ inputs.export_template }}" "../build/${{ inputs.export_template }}/${{ inputs.project_name }}.exe"
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: ${{ inputs.export_template }}
+        path: build/${{ inputs.export_template }}

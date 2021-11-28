@@ -1,0 +1,19 @@
+name: "godot-ci export"
+on: [push, workflow_dispatch]
+
+jobs:
+  export-godot:
+    strategy:
+      matrix:
+        export_template: ["Windows Desktop", "HTML5"]
+        godot_version: [3.4]
+    name: Windows Export
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:${{ matrix.godot_version }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/godot-export.yml
+        with:
+          export_template: ${{ matrix.export_template }}
+          godot_version: ${{ matrix.godot_version }}
