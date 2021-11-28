@@ -8,6 +8,7 @@ func _input(event: InputEvent) -> void:
 		event.is_action_pressed("attack")
 		|| event.is_action_pressed("jump")
 		|| event.is_action_pressed("pause")
+		|| event is InputEventMouseButton
 	):
 		get_tree().set_input_as_handled()
 		var changed = get_tree().change_scene_to(first_scene)
