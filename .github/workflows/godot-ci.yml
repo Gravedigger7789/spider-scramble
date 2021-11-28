@@ -13,7 +13,7 @@ jobs:
       image: barichello/godot-ci:${{ matrix.godot_version }}
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/godot-export.yml
+      - uses: ./.github/actions/godot-export
         with:
           export_template: ${{ matrix.export_template }}
           godot_version: ${{ matrix.godot_version }}
