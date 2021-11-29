@@ -34,6 +34,10 @@ jobs:
         with:
           name: ${{ matrix.export_template }}
           path: build/
+      - name: Upload to Itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        run: butler push ./build ${{ secrets.ITCH_IO_USERNAME }}/${{ secrets.ITCH_IO_GAME }}:${{ matrix.export_template }}
       - name: Publish to GitHub Pages
         if: matrix.export_template == 'HTML5'
         uses: peaceiris/actions-gh-pages@v3
