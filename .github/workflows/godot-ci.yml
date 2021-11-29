@@ -10,7 +10,7 @@ jobs:
   export-godot:
     strategy:
       matrix:
-        export_template: ["Windows Desktop", "HTML5"]
+        export_template: ["Windows", "HTML5"]
         godot_version: [3.4]
     name: Export
     runs-on: ubuntu-latest
