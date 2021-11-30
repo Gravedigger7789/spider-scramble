@@ -44,3 +44,8 @@ Or go rogue and ignore the dictionary:
 + Dad jokes / puns like deterants / tick tock / spelling bee / flywheel  
 
 Note: Nobody's judging the code quality, so lots of bugs are both expected and accepted. Focus on having fun 😉
+
+**Creators:**
+| [Gravedigger](https://github.com/Gravedigger7789) | [Goose](https://github.com/Splendead-Goose) |
+| :---: | :---: |
+| ![Digger](https://avatars.githubusercontent.com/u/6515720?s=96&v=4) | ![Goose](https://avatars.githubusercontent.com/u/87876924?s=96&v=4) |
