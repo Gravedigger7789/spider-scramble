@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](LICENSE) ![Godot CI](https://github.com/Gravedigger7789/spider-scramble/actions/workflows/godot-ci.yml/badge.svg)
 
-Spider Scramble was created for the [2021 GitHub Game-Off](https://itch.io/jam/game-off-2021)
+`Spider Scramble` was created for the [2021 GitHub Game-Off](https://itch.io/jam/game-off-2021)
 
 **GitHub Game-Off Theme: BUG (/bəɡ/)**
 
