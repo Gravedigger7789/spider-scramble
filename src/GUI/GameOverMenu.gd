@@ -6,10 +6,10 @@ var high_score := 0.0 setget set_high_score
 var high_time := 0.0 setget set_high_time
 
 onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
-onready var time_value: Label = $Background/ColorRect/CenterContainer/VBoxContainer/TimeContainer/PanelContainer/TimeValue
-onready var score_value: Label = $Background/ColorRect/CenterContainer/VBoxContainer/ScoreContainer/PanelContainer/ScoreValue
-onready var high_time_value: Label = $Background/ColorRect/CenterContainer/VBoxContainer/TimeContainer/PanelContainer2/HighTimeValue
-onready var high_score_value: Label = $Background/ColorRect/CenterContainer/VBoxContainer/ScoreContainer/PanelContainer2/HighScoreValue
+onready var time_value: Label = $Background/ColorRect/CenterContainer/VBoxContainer/GridContainer/TimePanelContainer/TimeValue
+onready var score_value: Label = $Background/ColorRect/CenterContainer/VBoxContainer/GridContainer/ScorePanelContainer/ScoreValue
+onready var high_time_value: Label = $Background/ColorRect/CenterContainer/VBoxContainer/GridContainer/HighTimePanelContainer/HighTimeValue
+onready var high_score_value: Label = $Background/ColorRect/CenterContainer/VBoxContainer/GridContainer/HighScorePanelContainer/HighScoreValue
 
 
 func show() -> void:
