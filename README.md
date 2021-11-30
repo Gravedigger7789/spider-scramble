@@ -1,6 +1,8 @@
 # Spider Scramble
 
-Spider Scramble was created for the 2021 GitHub Game-Off
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](LICENSE) ![Godot CI](https://github.com/Gravedigger7789/spider-scramble/actions/workflows/godot-ci.yml/badge.svg)
+
+Spider Scramble was created for the [2021 GitHub Game-Off](https://itch.io/jam/game-off-2021)
 
 **GitHub Game-Off Theme: BUG (/bəɡ/)**
 
@@ -25,6 +27,8 @@ Or go rogue and ignore the dictionary:
 - Dad jokes / puns like deterrents / tick-tock / spelling bee / flywheel
 
 Note: Nobody's judging the code quality, so lots of bugs are both expected and accepted. Focus on having fun 😉
+
+---
 
 ## Backstory
 
@@ -55,3 +59,7 @@ Charlie is a spider that loves his home in the forest. He is a solitary spider i
 |                              [Chris Racioppo](https://github.com/Gravedigger7789)                              |                                [Goose](https://github.com/Splendead-Goose)                                |
 | :------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------: |
 | [![Gravedigger](https://avatars.githubusercontent.com/u/6515720?s=96&v=4)](https://github.com/Gravedigger7789) | [![Goose](https://avatars.githubusercontent.com/u/87876924?s=96&v=4)](https://github.com/Splendead-Goose) |
+
+## Third Party Licenses
+
+Third Party License information can be found in the [LICENSE-THIRD-PARTY](LICENSE-THIRD-PARTY.md) file
