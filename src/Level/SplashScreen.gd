@@ -1,6 +1,6 @@
 extends Node
 
-export(PackedScene) var first_scene := preload("res://src/Level/Sandbox1.tscn")
+export(PackedScene) var first_scene := preload("res://src/Level/TreeLevel.tscn")
 
 
 func _input(event: InputEvent) -> void:
