@@ -48,3 +48,5 @@ func _on_Player_health_depleted() -> void:
 func _process(_delta: float) -> void:
 	game_over_menu.time = score_gui.time
 	game_over_menu.score = score_gui.score_adjusted
+	game_over_menu.high_time = score_gui.high_time
+	game_over_menu.high_score = score_gui.high_score_adjusted
