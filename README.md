@@ -52,6 +52,6 @@ Charlie is a spider that loves his home in the forest. He is a solitary spider i
 
 ## Creators
 
-|        [Chris Racioppo](https://github.com/Gravedigger7789)         |             [Goose](https://github.com/Splendead-Goose)             |
-| :-----------------------------------------------------------------: | :-----------------------------------------------------------------: |
-| ![Digger](https://avatars.githubusercontent.com/u/6515720?s=96&v=4) | ![Goose](https://avatars.githubusercontent.com/u/87876924?s=96&v=4) |
+|                              [Chris Racioppo](https://github.com/Gravedigger7789)                              |                                [Goose](https://github.com/Splendead-Goose)                                |
+| :------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------: |
+| [![Gravedigger](https://avatars.githubusercontent.com/u/6515720?s=96&v=4)](https://github.com/Gravedigger7789) | [![Goose](https://avatars.githubusercontent.com/u/87876924?s=96&v=4)](https://github.com/Splendead-Goose) |
