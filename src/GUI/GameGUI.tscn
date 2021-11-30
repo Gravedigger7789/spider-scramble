@@ -23,6 +23,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_top = 0.925
+anchor_right = 1.0
+anchor_bottom = 0.925
+margin_top = -80.0
+custom_constants/separation = 64
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthGUI" parent="HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 37.0
+margin_top = 34.0
+margin_right = 121.0
+margin_bottom = 80.0
+
+[node name="AmmoGUI" parent="HBoxContainer" instance=ExtResource( 2 )]
+margin_left = 185.0
+margin_top = 34.0
+margin_right = 342.0
+margin_bottom = 80.0
+
+[node name="ScoreGUI" parent="HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 406.0
+margin_right = 602.0
+margin_bottom = 80.0
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_left = 0.1
 anchor_top = 0.9
@@ -34,56 +62,6 @@ margin_right = 20.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
-margin_left = 43.0
-margin_right = 508.0
-margin_bottom = 46.0
-custom_constants/separation = 64
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/HBoxContainer"]
-margin_right = 84.0
-margin_bottom = 46.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HealthGUI" parent="CenterContainer/HBoxContainer/PanelContainer" instance=ExtResource( 1 )]
-margin_left = 8.0
-margin_top = 12.0
-margin_right = 76.0
-margin_bottom = 33.0
-
-[node name="PanelContainer2" type="PanelContainer" parent="CenterContainer/HBoxContainer"]
-margin_left = 148.0
-margin_right = 305.0
-margin_bottom = 46.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AmmoGUI" parent="CenterContainer/HBoxContainer/PanelContainer2" instance=ExtResource( 2 )]
-margin_left = 8.0
-margin_top = 16.0
-margin_right = 149.0
-margin_bottom = 29.0
-
-[node name="PanelContainer3" type="PanelContainer" parent="CenterContainer/HBoxContainer"]
-margin_left = 369.0
-margin_right = 465.0
-margin_bottom = 46.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ScoreGUI" parent="CenterContainer/HBoxContainer/PanelContainer3" instance=ExtResource( 7 )]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 88.0
-margin_bottom = 38.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 100
