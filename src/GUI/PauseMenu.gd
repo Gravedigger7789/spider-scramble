@@ -24,3 +24,10 @@ func _on_ContinueButton_pressed() -> void:
 	audio_stream_player.play()
 	get_tree().paused = false
 	hide()
+
+
+func _on_RestartButton_pressed() -> void:
+	get_tree().paused = false
+	var connected := get_tree().reload_current_scene()
+	if connected != OK:
+		push_error("Could not reload scene")
