@@ -157,6 +157,7 @@ margin_top = 293.0
 margin_right = 328.0
 margin_bottom = 338.0
 rect_min_size = Vector2( 320, 0 )
+mouse_default_cursor_shape = 2
 size_flags_horizontal = 4
 text = "Play Again!"
 __meta__ = {

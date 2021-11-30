@@ -35,21 +35,22 @@ __meta__ = {
 }
 
 [node name="HealthGUI" parent="HBoxContainer" instance=ExtResource( 1 )]
-margin_left = 37.0
-margin_top = 34.0
-margin_right = 121.0
-margin_bottom = 80.0
+margin_left = 111.0
+margin_top = 29.0
+margin_right = 179.0
+margin_bottom = 50.0
 
 [node name="AmmoGUI" parent="HBoxContainer" instance=ExtResource( 2 )]
-margin_left = 185.0
-margin_top = 34.0
-margin_right = 342.0
-margin_bottom = 80.0
+margin_left = 243.0
+margin_top = 33.0
+margin_right = 384.0
+margin_bottom = 46.0
 
 [node name="ScoreGUI" parent="HBoxContainer" instance=ExtResource( 7 )]
-margin_left = 406.0
-margin_right = 602.0
-margin_bottom = 80.0
+margin_left = 448.0
+margin_top = 25.0
+margin_right = 528.0
+margin_bottom = 55.0
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_left = 0.1
