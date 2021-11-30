@@ -25,7 +25,7 @@ Note: Nobody's judging the code quality, so lots of bugs are both expected and a
 
 **Backstory:**
 
-Charlie is a spider that loves his home in the forest. He is a solitary spider in a woodland full of surprises. What does Charlie do all day? Why is he always exploring? Maybe to find a mate? No, Charlie has not time for that! Charlie is always hungry looking for something good to eat. Every day he sets up some webs near his home to catch some unsuspecting bugs. While he is out, Charlie loves to gather shiny coins. How did these get in the forest? Nobody knows. All Charlie knows is that they will look rather lovely in his Study, next to his collection of sea shells. We join Charlie as he sets out on a run to check those webs...
+Charlie is a spider that loves his home in the forest. He is a solitary spider in a woodland full of surprises. What does Charlie do all day? Why is he always exploring? Maybe to find a mate? No, Charlie has no time for that! Charlie is always hungry looking for something good to eat. Every day he sets up some webs near his home to catch some unsuspecting bugs. While he is out, Charlie loves to gather shiny coins. How did these get in the forest? Nobody knows. All Charlie knows is that they will look rather lovely in his Study, next to his collection of sea shells. We join Charlie as he sets out on a run to check those webs...
 
 **Characters:**
 
