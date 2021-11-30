@@ -8,11 +8,18 @@ Charlie is a spider that loves his home in the forest. He is a solitary spider i
 
 | Charlie | Harold | Roxxy |
 | :---:  | :---:  | :---:  |
-|![Charlie](assets/player/spider_idle_mouth_closed.png) | ![Harold](assets/enemy/bird_wings_neutral.png) | ![Roxxy](assets/enemy/rock.png) |
+| ![Charlie](assets/player/spider_idle_mouth_closed.png) | ![Harold](assets/enemy/bird_wings_neutral.png) | ![Roxxy](assets/enemy/rock.png) |
 
 **Object of the Game:**
 
-Try to collect as many "BUG" coins as you can to increase your score. Your score also increases the longer Charlie survives.  
-You will encounter some obstacles along the way too. Watch out for that birb, Harold! He is a tricky one! You will have to jump over that pesky Roxxy as well.  
-In a bind? Don't worry, those obstacles can be blasted for some extra points! Be careful though, you only have 5 shots. Eat more bugs caught in webs to get back some health and refill your shots!  
-Challenge your friends to survive the longest, collect the most coins and get the highest score!
++ Try to collect as many "BUG" coins as you can to increase your score. Your score also increases the longer Charlie survives.  
++ You will encounter some obstacles along the way too. Watch out for that birb, Harold! He is a tricky one! You will have to jump over that pesky Roxxy as well.  
++ In a bind? Don't worry, those obstacles can be blasted for some extra points! Be careful though, you only have 5 shots. Eat more bugs caught in webs to get back some health and refill your shots!  
++ Challenge your friends to survive the longest, collect the most coins and get the highest score!
+
+**Controls:**
+
+| Jump | Attack | Pause |
+| :---: | :---: | :---: |
+| Space, Up Arrow, A, Y | Z, Mouse Click, B, X | Esc |
+| ![Jump](assets/mobile/button_jump.png) | ![Attack](assets/mobile/button_shoot.png) | ![Pause](assets/mobile/button_pause.png) |
