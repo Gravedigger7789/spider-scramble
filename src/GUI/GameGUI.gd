@@ -4,9 +4,9 @@ class_name GameGUI
 export(NodePath) var player_path
 
 onready var player: Player = get_node(player_path)
-onready var health_gui = $CenterContainer/HBoxContainer/PanelContainer/HealthGUI
-onready var ammo_gui = $CenterContainer/HBoxContainer/PanelContainer2/AmmoGUI
-onready var score_gui = $CenterContainer/HBoxContainer/PanelContainer3/ScoreGUI
+onready var health_gui = $HBoxContainer/HealthGUI
+onready var ammo_gui = $HBoxContainer/AmmoGUI
+onready var score_gui = $HBoxContainer/ScoreGUI
 onready var pause_menu = $CanvasLayer/PauseMenu
 onready var game_over_menu = $CanvasLayer/GameOverMenu
 
@@ -41,9 +41,10 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _on_Player_health_depleted() -> void:
+	score_gui.save_high_score()
 	game_over_menu.show()
 
 
 func _process(_delta: float) -> void:
 	game_over_menu.time = score_gui.time
-	game_over_menu.score = score_gui.adjusted_score
+	game_over_menu.score = score_gui.score_adjusted

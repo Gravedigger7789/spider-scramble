@@ -4,26 +4,56 @@
 [ext_resource path="res://src/GUI/ScoreGUI.gd" type="Script" id=2]
 [ext_resource path="res://src/GUI/GameFont-Small.tres" type="DynamicFont" id=3]
 
-[node name="ScoreGUI" type="HBoxContainer"]
+[node name="ScoreGUI" type="GridContainer"]
 margin_right = 80.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 80, 0 )
 size_flags_vertical = 4
 theme = ExtResource( 1 )
+columns = 2
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-margin_right = 80.0
+[node name="Blank" type="Control" parent="."]
+margin_right = 96.0
 margin_bottom = 30.0
-size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="CenterContainer"]
-margin_left = 31.0
-margin_right = 48.0
+[node name="HighScoreLabel" type="Label" parent="."]
+margin_left = 100.0
+margin_right = 196.0
 margin_bottom = 30.0
 custom_fonts/font = ExtResource( 3 )
+text = "Hi-Score"
+
+[node name="ScorePanel" type="PanelContainer" parent="."]
+margin_top = 34.0
+margin_right = 96.0
+margin_bottom = 80.0
+
+[node name="Score" type="Label" parent="ScorePanel"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 88.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 80, 0 )
+custom_fonts/font = ExtResource( 3 )
 text = "0"
-align = 2
+align = 1
+
+[node name="HighScorePanel" type="PanelContainer" parent="."]
+margin_left = 100.0
+margin_top = 34.0
+margin_right = 196.0
+margin_bottom = 80.0
+
+[node name="HighScore" type="Label" parent="HighScorePanel"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 88.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 80, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "1337"
+align = 1
