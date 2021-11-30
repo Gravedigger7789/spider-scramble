@@ -68,7 +68,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="gh-game-off-bug"
+config/name="spider-scramble"
 run/main_scene="res://src/Level/SplashScreen.tscn"
 config/icon="res://icon.png"
 
