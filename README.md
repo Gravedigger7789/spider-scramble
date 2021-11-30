@@ -1,5 +1,28 @@
 # Spider Scramble
 
+Spider Scramble was created for the 2021 GitHub Game-Off
+
+**GitHub Game-Off Theme: BUG (/bəɡ/)**  
+
+***noun***
++ an insect or creepy crawly
++ an unexpected defect, fault, flaw, or imperfection in code or equipment
++ a microorganism (such as a bacterium or virus) causing illness or disease
++ a concealed listening device
++ a sudden enthusiasm
++ a river in Ukraine  
+
+***verb***
++ to bother or annoy or pester
++ to plant a listening device
++ to "bug off" or "bug out"  
+
+Or go rogue and ignore the dictionary:
++ B.U.G acronyms e.g. Being Unusually Good or Big Urban Game or something
++ Dad jokes / puns like deterants / tick tock / spelling bee / flywheel  
+
+Note: Nobody's judging the code quality, so lots of bugs are both expected and accepted. Focus on having fun 😉
+
 **Backstory:**
 
 Charlie is a spider that loves his home in the forest. He is a solitary spider in a woodland full of surprises. What does Charlie do all day? Why is he always exploring? Maybe to find a mate? No, Charlie has not time for that! Charlie is always hungry looking for something good to eat. Every day he sets up some webs near his home to catch some unsuspecting bugs. While he is out, Charlie loves to gather shiny coins. How did these get in the forest? Nobody knows. All Charlie knows is that they will look rather lovely in his Study, next to his collection of sea shells. We join Charlie as he sets out on a run to check those webs...
@@ -23,27 +46,6 @@ Charlie is a spider that loves his home in the forest. He is a solitary spider i
 | :---: | :---: | :---: |
 | Space, Up Arrow, A, Y | Z, Mouse Click, B, X | Esc |
 | ![Jump](assets/mobile/button_jump.png) | ![Attack](assets/mobile/button_shoot.png) | ![Pause](assets/mobile/button_pause.png) |
-
-**GitHub Game-Off Theme: BUG (/bəɡ/)**  
-
-***noun***
-+ an insect or creepy crawly
-+ an unexpected defect, fault, flaw, or imperfection in code or equipment
-+ a microorganism (such as a bacterium or virus) causing illness or disease
-+ a concealed listening device
-+ a sudden enthusiasm
-+ a river in Ukraine  
-
-***verb***
-+ to bother or annoy or pester
-+ to plant a listening device
-+ to "bug off" or "bug out"  
-
-Or go rogue and ignore the dictionary:
-+ B.U.G acronyms e.g. Being Unusually Good or Big Urban Game or something
-+ Dad jokes / puns like deterants / tick tock / spelling bee / flywheel  
-
-Note: Nobody's judging the code quality, so lots of bugs are both expected and accepted. Focus on having fun 😉
 
 **Creators:**
 | [Gravedigger](https://github.com/Gravedigger7789) | [Goose](https://github.com/Splendead-Goose) |
