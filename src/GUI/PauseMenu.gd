@@ -24,7 +24,3 @@ func _on_ContinueButton_pressed() -> void:
 	audio_stream_player.play()
 	get_tree().paused = false
 	hide()
-
-
-func _on_QuitButton_pressed() -> void:
-	get_tree().quit()

@@ -16,10 +16,6 @@ func _on_Projectile_body_entered(body: Node) -> void:
 		body.damage()
 
 
-func _on_Expiration_timeout():
-	queue_free()
-
-
 func hit() -> void:
 	set_deferred("monitorable", false)
 	set_deferred("monitoring", false)
@@ -28,3 +24,7 @@ func hit() -> void:
 	if connected != OK:
 		push_warning("Could not connect hit sound finished")
 	hit_sound.play()
+
+
+func _on_VisibilityNotifier2D_viewport_exited(_viewport: Viewport) -> void:
+	queue_free()

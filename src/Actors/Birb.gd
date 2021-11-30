@@ -16,6 +16,8 @@ func jump() -> void:
 func _physics_process(_delta: float) -> void:
 	if velocity.y > 0:
 		animation_player.play("fall")
+	else:
+		animation_player.play("jump")
 	if is_on_floor():
 		animation_player.play("RESET")
 	jump_detector_collision.shape.extents.x = JUMP_DETECTION_DISTANCE * Difficulty.speed_modifier
