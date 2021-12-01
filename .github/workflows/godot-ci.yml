@@ -3,8 +3,8 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    release:
-      types: [created]
+  release:
+    types: [created]
 
 concurrency: ci-${{ github.ref }}
 
