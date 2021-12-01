@@ -12,11 +12,12 @@ func _ready() -> void:
 
 
 func show() -> void:
-	audio_stream_player.stream = pause_sound
-	audio_stream_player.play()
-	get_tree().paused = true
-	continue_button.grab_focus()
-	.show()
+	if !visible:
+		audio_stream_player.stream = pause_sound
+		audio_stream_player.play()
+		get_tree().paused = true
+		continue_button.grab_focus()
+		.show()
 
 
 func _on_ContinueButton_pressed() -> void:
