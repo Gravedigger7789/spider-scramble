@@ -19,7 +19,7 @@ jobs:
     name: Godot Export
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:${{ env.GODOT_VERSION }}
+      image: barichello/godot-ci:${{ GODOT_VERSION }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -28,7 +28,7 @@ jobs:
       - name: Setup Export Templates
         run: |
           mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${{ env.GODOT_VERSION }}.stable ~/.local/share/godot/templates/${{ env.GODOT_VERSION }}.stable
+          mv /root/.local/share/godot/templates/${{ GODOT_VERSION }}.stable ~/.local/share/godot/templates/${{ GODOT_VERSION }}.stable
       - name: Build Project
         run: |
           mkdir -v -p "build"
@@ -50,7 +50,7 @@ jobs:
     name: GitHub Release
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:${{ env.GODOT_VERSION }}
+      image: barichello/godot-ci:${{ GODOT_VERSION }}
     if: startsWith(github.ref, 'refs/tags/')
     env:
       ARTIFACT_PATH: artifacts
@@ -59,18 +59,18 @@ jobs:
       - name: Download Artifacts
         uses: actions/download-artifact@v2
         with:
-          path: ${{ env.ARTIFACT_PATH }}
+          path: ${{ ARTIFACT_PATH }}
       - name: Upload to Itch.io
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
-        working-directory: ${{ env.ARTIFACT_PATH }}
+        working-directory: ${{ ARTIFACT_PATH }}
         run: for dir in */; do butler push ./$dir "${{ secrets.ITCH_IO_USERNAME }}/${{ secrets.ITCH_IO_GAME }}:${dir%/}" --userversion "${GITHUB_REF#refs/*/}"; done
       - name: Zip Artifacts
-        working-directory: ${{ env.ARTIFACT_PATH }}
-        run: for dir in */; do ( cd "$dir"; zip -r "${{ env.PROJECT_NAME }}-${dir%/}-${GITHUB_REF#refs/*/}.zip" . ); done
+        working-directory: ${{ ARTIFACT_PATH }}
+        run: for dir in */; do ( cd "$dir"; zip -r "${{ PROJECT_NAME }}-${dir%/}-${GITHUB_REF#refs/*/}.zip" . ); done
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          files: ./${{ env.ARTIFACT_PATH }}/**/*.zip
+          files: ./${{ ARTIFACT_PATH }}/**/*.zip
           generate_release_notes: true
           draft: true
