@@ -60,10 +60,7 @@ jobs:
           path: artifacts
       - name: Zip Artifacts
         working-directory: artifacts
-        run: for dir in */; do ( cd "$dir"; zip -r "${dir%/}.zip" . ); done
-      - name: Display Artifacts
-        run: ls -R
-        working-directory: artifacts
+        run: for dir in */; do ( cd "$dir"; zip -r "${{ github.event.repository.name }}-${dir%/}-${GITHUB_REF#refs/*/}.zip" . ); done
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
