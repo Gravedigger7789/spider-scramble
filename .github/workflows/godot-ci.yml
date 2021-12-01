@@ -60,7 +60,7 @@ jobs:
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
         working-directory: ${{ env.ARTIFACT_PATH }}
-        run: for dir in */; do butler push ./$dir "${{ secrets.ITCH_IO_USERNAME }}/${{ secrets.ITCH_IO_GAME }}:${dir%/} --userversion ${GITHUB_REF#refs/*/}; done
+        run: for dir in */; do butler push ./$dir "${{ secrets.ITCH_IO_USERNAME }}/${{ secrets.ITCH_IO_GAME }}:${dir%/}" --userversion "${GITHUB_REF#refs/*/}"; done
       - name: Zip Artifacts
         working-directory: ${{ env.ARTIFACT_PATH }}
         run: for dir in */; do ( cd "$dir"; zip -r "${{ env.PROJECT_NAME }}-${dir%/}-${GITHUB_REF#refs/*/}.zip" . ); done
