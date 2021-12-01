@@ -40,6 +40,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_tree().set_input_as_handled()
 
 
+func _notification(what: int) -> void:
+	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT:
+		pause_menu.show()
+
+
 func _on_Player_health_depleted() -> void:
 	score_gui.save_high_score()
 	game_over_menu.show()
