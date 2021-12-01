@@ -68,6 +68,7 @@ jobs:
         run: for dir in */; do ( cd "$dir"; zip -r "${{ env.PROJECT_NAME }}-${dir%/}-${GITHUB_REF#refs/*/}.zip" . ); done
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
+        run: ls -lrt ./${{ env.ARTIFACT_PATH }}/**/*.zip
         with:
           files: ./${{ env.ARTIFACT_PATH }}/**/*.zip
           generate_release_notes: true
