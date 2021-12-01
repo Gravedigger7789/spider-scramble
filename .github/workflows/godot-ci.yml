@@ -8,16 +8,18 @@ on:
 
 concurrency: ci-${{ github.ref }}
 
+env:
+  GODOT_VERSION: 3.4
+
 jobs:
   godot-export:
     strategy:
       matrix:
         export_template: ["Windows", "HTML5"]
-        godot_version: [3.4]
     name: Godot Export
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:${{ matrix.godot_version }}
+      image: barichello/godot-ci:${{ env.GODOT_VERSION }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -26,7 +28,7 @@ jobs:
       - name: Setup Export Templates
         run: |
           mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${{ matrix.godot_version }}.stable ~/.local/share/godot/templates/${{ matrix.godot_version }}.stable
+          mv /root/.local/share/godot/templates/${{ env.GODOT_VERSION }}.stable ~/.local/share/godot/templates/${{ env.GODOT_VERSION }}.stable
       - name: Build Project
         run: |
           mkdir -v -p "build"
@@ -47,6 +49,8 @@ jobs:
     needs: godot-export
     name: GitHub Release
     runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:${{ env.GODOT_VERSION }}
     if: startsWith(github.ref, 'refs/tags/')
     env:
       ARTIFACT_PATH: artifacts
