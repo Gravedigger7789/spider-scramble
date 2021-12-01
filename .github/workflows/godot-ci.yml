@@ -10,6 +10,7 @@ concurrency: ci-${{ github.ref }}
 
 env:
   GODOT_VERSION: 3.4
+  GODOT_BUILD_CONTAINER: barichello/godot-ci:${{ env.GODOT_VERSION }}
 
 jobs:
   godot-export:
@@ -19,7 +20,7 @@ jobs:
     name: Godot Export
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:${{ env.GODOT_VERSION }}
+      image: ${{ env.GODOT_BUILD_CONTAINER }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -50,7 +51,7 @@ jobs:
     name: GitHub Release
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:${{ env.GODOT_VERSION }}
+      image: ${{ env.GODOT_BUILD_CONTAINER }}
     if: startsWith(github.ref, 'refs/tags/')
     env:
       ARTIFACT_PATH: artifacts
