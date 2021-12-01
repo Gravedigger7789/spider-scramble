@@ -66,6 +66,8 @@ jobs:
       - name: Zip Artifacts
         working-directory: ${{ env.ARTIFACT_PATH }}
         run: for dir in */; do ( cd "$dir"; zip -r "${{ env.PROJECT_NAME }}-${dir%/}-${GITHUB_REF#refs/*/}.zip" . ); done
+      - name: Display glob pattern output
+        run: ls -lrt ./${{ env.ARTIFACT_PATH }}/**/*.zip
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
